@@ -1,0 +1,16 @@
+mixin service_sql(id, name)
+    .widget.col-6.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/sql")
+                        .title SQL Server
+                    .text-end
+                        img.img-fluid(src="/images/alert.png" style="max-width: 30px; max-height:30px")
+            .body
+                table(style="width: 100%")
+                    tr 
+                        td(rowspan=2)
+                            #cust_adt_sqlserver_bullets
+                        td
+                            canvas(style="width:90%;height:100px" id="sql_line")

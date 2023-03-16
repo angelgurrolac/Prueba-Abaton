@@ -1,0 +1,15 @@
+mixin service_vmware(id, name)
+    .widget.col-6.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/vmware")
+                        .title VmWare
+            .body
+                 table(style="width: 100%")
+                    tr 
+                        td(rowspan=2)
+                            #cust_vmware_bullets
+                        td
+                            canvas(style="width:90%;height:63px" id="chartHistogramContacts")
+                    

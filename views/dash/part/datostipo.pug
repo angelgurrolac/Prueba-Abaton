@@ -1,0 +1,15 @@
+mixin datostipo()
+    .widget.col-md-4
+        div
+            .head
+                h5 Tipo de datos
+            .body 
+                table(style="width:100%;")
+                    tr 
+                        td.text-center
+                            canvas#chartbar(style="margin-top: 10px;width:280px;height:210px;")
+                        
+    block scripts
+        script(src="/javascripts/dash/lvl1/datos.js")
+        script chartbar();
+        script updatechartbar();

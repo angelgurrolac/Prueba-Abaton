@@ -1,0 +1,79 @@
+extends ../../layout
+include ../parts/filters
+include ../parts/overall
+include ../parts/servicesTable
+include ../parts/singleCanvas
+include ../parts/responseTime
+include ../parts/test
+include ../parts/serviceTableHits
+
+block head
+    style.
+        #serverslvl2 {
+            font-size: 1.5em;
+        }
+        #serverslvl2 .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        #serverslvl2 .sem.green {
+            background-color: #36BA6E;
+        }
+        #serverslvl2 .sem.yellow {
+            background-color: #FBBC05;
+        }
+        #serverslvl2 .sem.red {
+            background-color: #F6404F;
+        }
+        #serverslvl2 table.dataTable.no-footer {
+            border-bottom: none;
+        }
+        #tophits tbody tr td{
+            padding: 5px !important;
+        }
+
+block content
+    .row 
+        .col-9
+        .col-3
+            i.fa-solid.fa-clock.me-2
+            .form-check.form-switch.d-inline-block
+                input.form-check-input#flexSwitchCheckDefault(type="checkbox")
+                label.form-check-label(for="flexSwitchCheckDefault") 1 minute
+            i.fa-solid.fa-palette.ms-3.me-2
+            .form-check.form-switch.d-inline-block
+                input.form-check-input#flexSwitchCheckDefault2(type="checkbox")
+                label.form-check-label(for="flexSwitchCheckDefault") Dark mode
+    #dash.p-0
+        h1= cust + "- IIS"
+        nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash/health") Dashboards
+                    li.breadcrumb-item Health
+                    li.breadcrumb-item= cust 
+                    li.breadcrumb-item IIS
+        .row
+            +filters()
+        .row 
+            .col-3
+                #serverslvl2
+        .row
+            +responseTime("Response time","responsecodes")
+            +singleCanvas("Response codes","responsecodes","6")
+        .row
+            +serviceTableHits("Top hits","tophits")
+            +serviceTable("Application Pools","pools")
+
+       
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js")
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/dash/lvl2/adtiis.js")
+    script adtiis();
+    script updateadtiis();

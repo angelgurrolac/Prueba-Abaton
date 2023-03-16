@@ -1,0 +1,34 @@
+extends ../../layout
+include ../part/filtro
+include ../part/ram
+include ../part/datos
+include ../part/tablerovmware
+include ../part/ram2
+include ../part/datostipo
+
+block content
+    #dash.p-0
+        h1 Vmware 
+        .row#dash
+            +filtro()
+            +tablero("CPU", "45%")
+            +tablero("RAM", "50%")
+            +tablero("Disco", "50%")
+        .row#dash
+            +ram("ESXi-HX-COR-N2 CPU", "cpu")   
+            +ram("ESXi-HX-COR-N2 RAM", "ram") 
+            +ram("ESXi-HX-COR-N2 Disco", "disk")   
+            +ram("CPU máquina virtual Vsphere", "cpuvirtual")   
+            +ram("RAM máquina virtual Vsphere", "ramvirtual")  
+            +datostipo()
+            +ram2("RAM máquina virtual asignada") 
+            +datos("Tipos de datos usados")  
+
+
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/dash/lvl1/vmware.js") 
+    script tredline()
+    script loopDash();

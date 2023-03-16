@@ -1,0 +1,22 @@
+mixin responseTime(title, id)
+    .widget.col-6.p-2
+        div
+            .head
+                a(href="/dash/healthlvl1")
+                    .title= title
+                
+            .body
+                table(style="width:100%")
+                    tr 
+                        td
+                            .kpi-value.s1.d-inline-block.ms-4 52
+                            .label.d-inline-block ms
+                            br
+                            .label.d-inline-block min 
+                            .kpi-value.s2.d-inline-block.ms-1 0
+                            .label.d-inline-block.ms-3 max 
+                            .kpi-value.s2.d-inline-block.ms-1 1,254
+                            br
+                            p(style="margin-left:2.5rem !important;") 2%
+                        td(rowspan=4)
+                            canvas(style="width:90%;height:100px" id="resp_time2") 

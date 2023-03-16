@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    #dash
+        .row
+            .col
+                a(href="/dash/cmdb") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 CMDB / Control de cambios
+        .row
+            .col
+                .widget
+                    div
+                        .body
+                            table(style="width: 100%")
+                                tr
+                                    td(style="width:50%") !{data.left}
+                                    td(style="width:50%") !{data.right}

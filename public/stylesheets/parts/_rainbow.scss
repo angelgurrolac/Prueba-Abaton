@@ -1,0 +1,56 @@
+@mixin rainbow($thick, $from, $to) {
+    @if $from == top or $from == bottom {
+        width: $thick;
+        height: 100%;
+    } @else {
+        width: 100%;
+        height: $thick;
+    }
+    border-radius: $thick / 2;
+    background: #ff5b32;
+    background: -moz-linear-gradient($from, #ff5b32 0%, #fff830 50%, #40ff32 78%, #00bff9 100%);
+    background: -webkit-linear-gradient($from, #ff5b32 0%, #fff830 50%, #40ff32 78%, #00bff9 100%);
+    background: linear-gradient($to, #ff5b32 0%, #fff830 50%, #40ff32 78%, #00bff9 100%);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+#dash {
+    .widget {
+        .rainbow-N-6 {
+            @include rainbow(6px, bottom, to top);
+        }
+        .rainbow-N-8 {
+            @include rainbow(8px, bottom, to top);
+        }
+        .rainbow-N-12 {
+            @include rainbow(12px, bottom, to top);
+        }
+        .rainbow-S-6 {
+            @include rainbow(6px, top, to bottom);
+        }
+        .rainbow-S-8 {
+            @include rainbow(8px, top, to bottom);
+        }
+        .rainbow-S-12 {
+            @include rainbow(12px, top, to bottom);
+        }
+        .rainbow-E-6 {
+            @include rainbow(6px, left, to right);
+        }
+        .rainbow-E-8 {
+            @include rainbow(8px, left, to right);
+        }
+        .rainbow-E-12 {
+            @include rainbow(12px, left, to right);
+        }
+        .rainbow-W-6 {
+            @include rainbow(6px, right, to left);
+        }
+        .rainbow-W-8 {
+            @include rainbow(8px, right, to left);
+        }
+        .rainbow-W-12 {
+            @include rainbow(12px, right, to left);
+        }
+    }
+}

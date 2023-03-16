@@ -1,0 +1,126 @@
+$BACK0: #e3eef4;
+$BORDER: #cccccc;
+$TEXT: #000;
+
+body {
+    background: $BACK0;
+    color: $TEXT;
+}
+
+#sidebar ul li.active > a {
+    background: #02aeee;
+    color: #ffffff;
+}
+
+#sidebar {
+    background: #0077d6;
+    position: relative;
+    top: 0;
+    height: calc(100vh);
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    /* Scrollable contents if viewport is shorter than content. */
+    .sidebar-header {
+        background: transparent;
+    }
+}
+
+.navbar {
+    background: #ffffff;
+
+    input {
+        background-color: $BACK0 !important;
+        border: 1px solid $BORDER !important;
+        color: #fff !important;
+    }
+}
+
+#dash {
+    .widget {
+        & > div {
+            background-color: #ffffff;
+            color: $TEXT;
+        }
+       
+    }
+}
+a,
+a:hover,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: $TEXT;
+}
+
+.info #hour {
+    color: #ffffff;
+}
+
+.period-container,
+.filter {
+    select,
+    input[type="date"],
+    input[type="time"],
+    input[type="button"] {
+        background-color: $BACK0;
+        color: $TEXT !important;
+        border: solid 1px gainsboro;
+    }
+}
+
+table.table,
+.table td,
+.table th {
+    color: inherit;
+    background-color: inherit;
+    border-color: inherit;
+}
+
+#dash {
+    .widget {
+        .head {
+            border-bottom: solid 1px $TEXT;
+        }
+    }
+}
+
+.dataTables_wrapper {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_processing {
+        color: $TEXT !important;
+    }
+
+    .dataTables_paginate {
+        color: $TEXT !important;
+
+        .paginate_button {
+            color: inherit !important;
+
+            &.current {
+                border: inherit !important;
+                background-color: inherit !important;
+
+                &:hover {
+                    border: 1px solid inherit !important;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+    color: inherit !important;
+}
+
+.card-header,
+.card-footer {
+    background: none;
+}

@@ -1,0 +1,19 @@
+mixin topinstances(title, id)
+    .widget.col-md-6.col-sm-6.col-lg-7.col-xl-7.p-2
+        div
+            .head
+                .filters
+                    a(href="#")
+                        h4.m-0= title
+                    .text-end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+            .body 
+                .row 
+                    .col-lg-5.mx-auto.my-auto.text-center
+                        div(style="height:200px; width:600px;")
+                            canvas(id=id + "_chart", style="margin-top: 10px; position: relative;")
+                    .col-lg-7.mx-auto.my-auto
+                        div(id=id+"_actual")
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

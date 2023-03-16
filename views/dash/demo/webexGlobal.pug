@@ -1,0 +1,259 @@
+include period-select
+
+mixin webexGlobal(id,title,data,regionId)
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Errores
+                    .text_end
+                        .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("bugs")
+            .body 
+                .row 
+                    .col-lg-7.mx-auto.my-auto.text-center
+                        div(style="height:290px;")
+                            canvas#bugs(style="margin-top: 10px; position: relative;")
+                    .col-lg-5.mx-auto.my-auto
+                        #bugsactual
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title DNS - Query Time
+                    .text-end
+                        .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    +period-select("querytime")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px; width:100%;")
+                            canvas#querytime(style="margin-top: 20px;height:250px;width:450px;;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#FF847C")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#querytimeactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#querytimemax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#querytime_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Jitter
+                    .text_end
+                        #sem-jitter.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("jitter")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#jitter(style="margin-top: 20px;height:250px;width:450px;;height:250px;width:450px;")
+                .row 
+                    .col-lg-10.col-md-10.col-xs-10.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#4D8FD6")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#jitteractual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#jittermax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#jitter_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px") 
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Latencia
+                    .text_end
+                        #sem-latency.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    +period-select("latency")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#latency(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#D77420")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#latencyactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#latencymax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#latency_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Loss
+                    .text_end
+                        #sem-loss.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("loss")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#loss(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#B769E9")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#lossactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#lossmax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#loss_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Tasa de Transferencia Efectiva
+                    .text_end
+                        #sem-xferrate.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("xferrate")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-N-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#xferrate(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-10.col-md-10.col-xs-10.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#27CBB9")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#xferrateactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#xferratemax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#xferrate_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Tiempo de respuesta
+                    .text_end
+                        #sem-resptime.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("resptime")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#resptime(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-10.col-md-10.col-xs-10.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#E7537F")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#resptimeactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#resptimemax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#resptime_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title MOS
+                    .text_end
+                        #sem-mos.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("mos")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#mos(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#56cc00")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#mosactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#mosmax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#mos_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title PDV
+                    .text_end
+                        #sem-pdv.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("pdv")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#pdv(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#AF327F")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#pdvactual
+                        .rectangle(style="background-color:#8C8C8C; margin-left: 25px;")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#pdvmax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#pdv_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

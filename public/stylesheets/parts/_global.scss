@@ -1,0 +1,77 @@
+body {
+    padding: 0;
+    background: $BACK1; 
+    font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+    color: $WHITE;
+}
+
+a {
+    color: $WHITE;
+    text-decoration: none;
+}
+a:hover {
+    color: $WHITE;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0px;
+    font-size: 36px;
+    margin-bottom: -10px;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: $WHITE;
+    display: inline-block;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font-size: 20px;
+}
+h5{
+    font-size: 18px;
+}
+h6 {
+    margin-left: 5%;
+    font-size: 14px;
+}
+p {
+    margin: 0;
+}
+hr {
+    color: $WHITE;
+}
+ul li {
+    list-style-type: none;
+    margin: 5% 0;
+}
+
+i,
+span {
+    display: inline-block;
+}
+.green{
+    color: $GREEN;
+}
+.red{
+    color: $RED;
+}
+.yellow{
+    color: $YELLOW;
+}
+.gray{
+    color: $LGRAY
+}
+.blue{
+    color: $BLUE1
+}

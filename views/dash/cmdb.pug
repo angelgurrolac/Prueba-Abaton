@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+    #dash
+        .row
+            .col-12
+                a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 CMDB / Control de cambios
+                nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item.active(aria-current="page")
+                            a(href="/dash") Inicio
+                        li.breadcrumb-item Dashboard
+        br
+        .row
+            .col
+                .widget
+                    div
+                        .head
+                            h4 Cambios
+                        .body
+                            table#grid
+                                thead
+                                    tr
+                                        th Fecha
+                                        th Control de cambios
+                                        th Resultado
+                                        th Elemento afectado
+                                tbody
+                                    -for (let o of data)
+                                        tr
+                                            td= o.Date
+                                            td(style="color: " + (o.Control =="[No programado]" ? "red" : "inherit") )= o.Control
+                                            td= o.Result
+                                            td
+                                                -if (typeof o.Item == "string")
+                                                    a(href="/dash/cmdb/" + o.Link)
+                                                        = o.Item
+                                                -else
+                                                    -for (let i=0; i<o.Item.length; i++)
+                                                        -if (i)
+                                                            |, 
+                                                        a(href="#")= o.Item[i]
+
+    script(src="/javascripts/dash/cmdb.js")
+    script loopDash();

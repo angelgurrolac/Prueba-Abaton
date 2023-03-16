@@ -1,0 +1,10 @@
+mixin singleCanvas(title, id, col)
+    .widget.p-2(class="col-" + col)
+        div
+            .head
+                .title= title
+            .body
+                table(style="width:100%;")
+                    tr 
+                        td 
+                            canvas(style="width:90%;height:100px" id=id) 

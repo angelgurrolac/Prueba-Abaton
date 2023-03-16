@@ -1,0 +1,60 @@
+extends layout
+include dash/w1
+include dash/w2
+include dash/w3
+include dash/w4
+include dash/w5
+include dash/w6
+include dash/w7
+include dash/w8
+include dash/w9
+include dash/w10
+include dash/w11
+include dash/w12
+include model
+
+block content
+    .row
+        .col-12
+            h1 Dashboard
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    
+    .row#dash
+        //- .col-12 
+        //-     h3 Infraestructura
+        +w1("disp","Disponibilidad","99%","green","3")
+        +w2("alerta","Alertas","40","63","86","red","3")
+        +w2("incidentes","Incidentes","4","10","14","green","3","/dash/incident")
+        +w2("banda","Access point","230","5,124","5,354","green","3","/dash/ap")
+        +w5("servidor","Servidores","green","3")
+        +w3("vm","Volumen monetario","green","3","/dash/volmon")
+        +w6("sla","SLA's","green","3")
+        +w2("sucursal","Tiendas","8","942","950","green","3","/dash/branch")
+        //- +w2("vpn","VPN","28","98","126","green","3","/dash/vpn")
+        
+        
+        //- +w7("enlace","Enlaces","green","3")
+        //- +w8("red","Tráfico de red","green","3") 
+        //- .col-12     
+        //-     h3 Seguridad
+        +w11("seguridad","Seguridad","green","3")
+        +w10("redes","Redes","green","3")
+        +w9("cambios2","CMDB / Cambios","1","7","9","green","3")
+        +w12("apps","Aplicaciones","0","3","3","green","3","/dash/te")
+        
+        //- +w2("certificado","Certificados","1","17","145","green","3")
+        +model()
+        
+    br
+block scripts
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash.js") 
+    script setupDash();
+    //- what else
+    

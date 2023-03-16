@@ -1,0 +1,26 @@
+include region 
+
+mixin regiones(title)
+    .widget.col-md-12.col-sm-12.col-lg-12.col-xl-12.p-2
+        div 
+            .head  
+                h4.m-0= title 
+                    //.text-end 
+                        a(href="")
+                            h5 Borrar filtros
+            .body.p-1
+                .row.period-container-dna
+                    .d-xl-none.d-lg-none.col-md-2.col-sm-1
+                    .col-sm-10.col-md-8.col-lg-12.col-xl-12.col-12.p-0.justify-content-center 
+                        +region("GR Nacional", "GRNa", 98.6, "#36BA6E")
+                        +region("GC Interno", "GCIn", 56.2, "#FEBC46")
+                        +region("GCR Central", "GCRC", 93.2, "#36BA6E")
+                        +region("GCR Alterno", "GCRA", 78.9, "#36BA6E")
+                        +region("GCR Peninsula", "GCRP", 45.2, "#F6404F")
+                        +region("SGC La Paz", "SGC", 98.6, "#36BA6E")
+                        +region("GCR Norte", "GCRN", 98.6, "#36BA6E")
+                        +region("CORP", "CORP", 98.6, "#36BA6E")
+                        +region("GCR Oriente", "GCRO", 98.6, "#36BA6E")
+                        +region("GCR Occidente", "GCROc", 80.7, "#36BA6E")
+                        +region("GCR Noreste", "GCRNE", 80.6, "#36BA6E")
+                        +region("GCR Baja California", "GCRBC", 52.1, "#FEBC46")

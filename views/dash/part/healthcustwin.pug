@@ -1,0 +1,81 @@
+extends ../../layout
+include ../parts/filters
+include ../parts/servicesTable
+include ../parts/overall
+include ../parts/server
+include ../parts/test
+include ../parts/singleCanvas
+include ../parts/processesTable
+include ../parts/diskwin
+
+block head
+    style.
+        #servers {
+            font-size: 1.5em;
+        }
+        #servers .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        #servers .sem.green {
+            background-color: #36BA6E;
+        }
+        #servers .sem.yellow {
+            background-color: #FBBC05;
+        }
+        #servers .sem.red {
+            background-color: #F6404F;
+        }
+        #servers table.dataTable.no-footer {
+            border-bottom: none;
+        }
+
+block content
+    .row 
+        .col-9
+        .col-3
+            i.fa-solid.fa-clock.me-2
+            .form-check.form-switch.d-inline-block
+                input.form-check-input#flexSwitchCheckDefault(type="checkbox")
+                label.form-check-label(for="flexSwitchCheckDefault") 1 minute
+            i.fa-solid.fa-palette.ms-3.me-2
+            .form-check.form-switch.d-inline-block
+                input.form-check-input#flexSwitchCheckDefault2(type="checkbox")
+                label.form-check-label(for="flexSwitchCheckDefault") Dark mode
+    #dash.p-0
+        h1= cust + " - Windows"
+        nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash/health") Dashboards
+                    li.breadcrumb-item Health
+                    li.breadcrumb-item= cust 
+                    li.breadcrumb-item Windows
+        .row
+            +filters()
+        .row
+            +overall("Salud General","win_health","Availability")
+            .col-3
+                +server()
+            .col-5  
+                canvas#win_line_health(style="width:95%; height:125px")
+        .row 
+            +singleCanvas("CPU","cpu","4")
+            +singleCanvas("RAM","ram","4")
+        .row
+            +processesTable("Processes","processes")
+            +diskwin("Disk")
+
+
+       
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/dash/lvl2/win.js") 
+    script win();
+    script updatewin();

@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title Tienda
+        link(rel="icon" type="image/png" href="/images/LogoAbaton.png")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css")
+        link(rel='stylesheet' href='/stylesheets/style.css')
+        link(rel="stylesheet" href="/stylesheets/themes/style2.css")
+        //- link(rel='stylesheet' href='/animate/animate.min.css')
+        script(src="/jquery/jquery.min.js")
+        script(src="/bootstrap/js/bootstrap.min.js")
+        script(src="/javascripts/libs/bootstrap-notify.min.js")
+    body
+        .container-fluid.p-0
+            .row.align-items-center.g-0
+                .col-8.col-lg-8.col-xl-8.col-xxl-8.img-login
+                    img.img-fluid(src="images/login.jpg" alt="" style="height: 788px;")
+                .col-4.col-md-4.col-xl-4.col-xxl-4.col-md-12.text-center
+                    .logo
+                        img.img-fluid(src='images/LogoAbaton.png' alt='logo' style="width: 50%;")
+                    br
+                    .error(style="display:none") #{message}
+                    form.form(method='POST' action="/login")
+                        .mb-3
+                            input.form-control(type="text" name="user" placeholder="Usuario" style="width:50%;margin-left: 25%;")#user
+                        .mb-3
+                            input.form-control(type="password" placeholder="Contraseña" name="pass" style="width:50%;margin-left: 25%;")#pass
+                        .mb-3
+                            a(href="/login-reset")
+                                p Olvidé mi contraseña
+                        .mb-3
+                            input.btn.btn-primary(type="submit" value="Ingresar" style="width: 50%;")
+    script(src="/javascripts/login.js") 

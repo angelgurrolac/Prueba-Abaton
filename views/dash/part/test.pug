@@ -1,0 +1,15 @@
+mixin test(title)
+    .widget.col-2.p-2
+        div
+            .body
+                #bullet
+
+    script(src="/javascripts/libs/Custom.js")
+    script.
+        const data = [
+            { sem: "green", label: "Applications " },
+            { sem: "green", label: "Windows " },
+            { sem: "yellow", label: "IIS " },
+            { sem: "red", label: "SQL Server " }
+        ];
+        Custom.bulletList("bullet", data);

@@ -1,0 +1,11 @@
+mixin enlace(title, id, id2)
+    .widget.p-2.col-4
+        div
+            .head
+                .title=title
+            .body 
+                table(style="width:100%;")
+                    tr  
+                        td
+                            canvas(style="width:90px; height:90px;" id= id) 
+                        td(style="text-align:initial;" id="data_"+id2)

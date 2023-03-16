@@ -1,0 +1,14 @@
+mixin serviceTableHits(title, id)
+    .widget.col-8.p-2
+        div
+            .head
+                a(href="/dash/"+id+"lvl2")
+                    .title= title
+                
+            .body
+                table(style="width:100%" id=id)
+                    thead 
+                        tr 
+                            th Page 
+                            th Hits
+                            th Response Time

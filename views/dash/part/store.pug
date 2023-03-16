@@ -1,0 +1,32 @@
+mixin store(o)
+    .col-4
+        .widget
+            div
+                .head
+                    .filters
+                        a(href=`/dash/branch/${o.ID}`)
+                            h4= o.Name
+                        .text-end
+                            .sem.green
+                .body
+                    table(style="width: 100%")
+                        tr
+                            td(colspan=4 style="color: green; text-align: right")
+                                kpi-value.s2(id="rank_" + o.ID)
+                        tr
+                            td(colspan=2)
+                                .kpi-value.s1(id="amount_" + o.ID)
+                                .kpi-label Vol. monetario
+                            td(colspan=2)
+                                .kpi-value.s2(id="perhour_" + o.ID)
+                                .kpi-label Ventas/hora
+                        tr
+                            td
+                                .kpi-value.s2= o.Cashiers
+                                .kpi-label Cajas
+                            td(colspan=2)
+                                .kpi-value.s2= o.Employees
+                                .kpi-label Empleados
+                            td
+                                .kpi-value.s2(id="count_" + o.ID)
+                                .kpi-label Prod. vendidos

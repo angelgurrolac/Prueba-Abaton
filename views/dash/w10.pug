@@ -1,0 +1,29 @@
+mixin w10(img, title, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                a(href="/network")
+                    .rounded.text-center.card-sem(class=sem)
+                        img(src="/images/iconos/"+img+".svg", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end.pt-1
+                    h3.title= title
+            .card-footer.py-0.px-2.border-0
+                .row    
+                    .col-2.p-0
+                    .col-10.p-0.text-center
+                        .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                            img(src="/images/iconos/ap.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                        h4.mb-0.text-end Ancho de banda
+                .row.my-2  
+                    .col-2.p-0
+                    .col-10.p-0.text-center
+                        .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                            img(src="/images/iconos/enlace.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                        h4.mb-0.text-end Enlaces
+                .row.my-2  
+                    .col-2.p-0
+                    .col-10.p-0.text-center
+                        .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                            img(src="/images/iconos/red.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                        h4.mb-0.text-end Tráfico de red
+                        br

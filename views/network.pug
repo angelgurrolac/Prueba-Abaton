@@ -1,0 +1,76 @@
+extends layout
+include dash/w2
+include dash/w4
+include dash/w7
+include dash/w8
+include network/banda
+include network/enlace
+include network/tredactual
+include network/incident
+include network/equipos
+
+block head
+    style.
+        td {
+             padding: 0 0.5em !important
+        }
+        .sem {
+            width: 0.8em;
+            height: 0.8em ;
+            border-radius: 50%;
+        }
+        .sem.green {
+            background-color: #36BA6E;
+        }
+        .sem.yellow {
+            background-color: #FBBC05;
+        }
+        .sem.red {
+            background-color: #F6404F;
+        }
+        .bar {
+            height: 1em;
+            background-color: #2598c9;
+        }
+        table.dataTable.no-footer {
+            border-bottom: none;
+        }
+block content
+    .row
+        .col-12
+            a(href="/dash") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1 Redes
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash
+        +w2("incidentes","Incidentes","4","10","14","green","3")
+        +w7("enlace","Enlaces","green","3")
+        +w8("red","Tráfico de red","green","3")
+        +w4("ap","Ancho de banda","green","3")
+    .row#dash
+        +enlace("Enlace Principal", "enlace_principal", "ep")
+        +enlace("Enlace Secundario", "enlace_secundario", "es")
+        +tredactual("Trafico de red", "actual")
+        +banda("Ancho de banda")
+        +equipos("Top de equipos")
+        +incident("ired")
+        
+block scripts
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/Gauge.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/dash.js") 
+    script setupDash();
+    script(src="/javascripts/dash/network.js") 
+    script setupTable();
+    script topDevice();
+    script network();
+    script updatered();
+    script tredline();

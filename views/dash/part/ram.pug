@@ -1,0 +1,15 @@
+mixin ram(title, id)
+    .col-md-4.widget
+        div
+            .head
+                h5=title
+            .body 
+                table(style="width:100%; text-align:center;")
+                    tr  
+                        td.text-center
+                            canvas(style="width: 100%" id="amount_" + id)
+
+    block scripts 
+        script(src="/javascripts/dash/lvl1/vmware.js")
+        script tredline();
+        script update(); 

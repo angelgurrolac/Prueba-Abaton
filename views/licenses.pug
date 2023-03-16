@@ -1,0 +1,69 @@
+extends layout
+include licenses/status
+include licenses/firmas
+include licenses/algoritmos
+include licenses/uso
+include licenses/topinstances
+
+block head
+    style.
+        p{
+            color: white;
+        } 
+        h5{
+            color: white;
+        }
+        td {
+             padding: 0 0.5em !important
+        }
+        .sem {
+            width: 0.8em;
+            height: 0.8em ;
+            border-radius: 50%;
+        }
+        .sem.green {
+            background-color: #36BA6E;
+        }
+        .sem.yellow {
+            background-color: #FBBC05;
+        }
+        .sem.red {
+            background-color: #F6404F;
+        }
+        .bar {
+            height: 1em;
+            background-color: #2598c9;
+        }
+        table.dataTable.no-footer {
+            border-bottom: none;
+        }
+
+block content
+    .row
+        .col-12
+            a(href="/dash") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1 Licencias
+            //h1 Dashboard
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash
+        +status("Certificados")
+        +firmas("Firmados vs Autofirmados","firma")
+        +algoritmos("Algoritmos en firmas")
+        +uso("Uso de certificados", "use")
+        +topinstances("Top instancias","topinstances")
+      
+  
+  
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/libs/Custom.js") 
+    script(src="/javascripts/dash/licenses.js") 
+    script loopDash();

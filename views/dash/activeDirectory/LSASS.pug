@@ -1,0 +1,53 @@
+mixin LSASS(id, name)
+    .widget.col-4.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/win")
+                        .title LSASS
+            .body
+                table(style="width: 100%")
+                    tr
+                        td
+                            .kpi-value.s0
+                            .label CPU Usage
+                        td
+                            .mb-2 
+                                canvas(style="margin-left: 20px; width:250px; height:90px" id="ad_LSASS_network")
+                    tr
+                        td(colspan=2).text-center
+                            p Memory Usage
+                            br
+                            .p-2
+                                canvas(id="ad_LSASS_memory", style="margin-left: 20px; width:250px; height:80px")
+                    tr  
+                        td(colspan=2).text-center
+                            p Replication Queue (DRA)
+                            br
+                            .p-2
+                                canvas(id="ad_LSASS_queue", style="margin-left: 20px; width:250px; height:80px")
+                .head
+                    .filters(style="border: 0;")
+                        a(href="/dash/servers/win")
+                            .title File Replication
+                table(style="width: 100%")
+                    tr 
+                        td
+                            .kpi-value.s0
+                            .label CPU Usage
+                        td
+                            .m-2
+                                canvas(style="margin-left: 20px; width:250px; height:80px" id="ad_LSASS_replica_cpu")
+                    tr
+                        td(colspan=2).text-center.mt-2
+                            p Memory Usage
+                            br
+                            .p-2
+                                canvas(id="ad_LSASS_replica_memory", style="margin-left: 20px; width:250px; height:80px")
+                    tr.mt-5 
+                        td(colspan=2).text-center
+                            p Replication Queue (DRA)
+                            br
+                            .p-2
+                                canvas(id="ad_LSASS_replica_queue", style="margin-left: 20px; width:250px; height:80px")
+

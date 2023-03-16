@@ -1,0 +1,38 @@
+mixin w11(img, title, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                .rounded.text-center.card-sem(class=sem)
+                    img(src="/images/iconos/"+img+".svg", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end.pt-1
+                    h3.title= title
+            .card-footer.py-0.px-2.border-0
+                .row.my-2     
+                    .col-6.p-0.text-center
+                        a(href="/dash/vpn")
+                            .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                                img(src="/images/iconos/vpn.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                            h5.mb-0.text-end VPN
+                    .col-6.p-0.text-center
+                        a(href="/dash/av")
+                            .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                                img(src="/images/iconos/antivirus.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                            h5.ms-2.mb-0 Antivirus
+                .row.my-2  
+                    .col-6.p-0.text-center
+                         a(href="/dash/licenses")
+                            .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                                img(src="/images/iconos/certificado.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                            h4.ms-3.mb-0.text-end Licencias
+                    .col-6.p-0.text-center
+                        a(href="/dash/activeDirectory")
+                            .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                                img(src="/images/iconos/da.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                            h4.mb-0.text-end LDAP
+                .row.my-2  
+                    .col-6.p-0.text-center
+                        a(href="/dash/ips")
+                            .rounded.text-center.card-sem(class=sem style="margin-top: 0!important;")
+                                img(src="/images/iconos/ids.svg", alt="", style="width:28px;height:28px;padding: 5px;")
+                            h4.mb-0.text-end IPS/IDS
+                        br

@@ -1,0 +1,21 @@
+mixin w9(img, title, bad, good, total, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                a(href="/dash/cmdb")
+                    .rounded.text-center.card-sem(class=sem)
+                        img(src="/images/iconos/"+img+".svg", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end
+                    h4.mb-0= title
+            .card-footer.p-2.border-0
+                .row    
+                    .col-8.p-0
+                        p No exitosos
+                        h3.title.red.mb-0= bad
+                        br
+                        p No programados
+                        h3.title.red.mb-0= bad
+                    .col-4.text-end.pt-5.p-0
+                        h3.mb-0.green= good
+                        h3.mb-0 / 
+                        h3.mb-0.gray= total

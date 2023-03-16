@@ -1,0 +1,12 @@
+mixin tablero(title, porcentaje)
+    .widget.col-2.p-2
+        div
+            .head
+                h5= title 
+            .body
+                table(style="width:100%")
+                    tr 
+                        td.text-center
+                            h2.m-0.green= porcentaje
+                            br
+                            h6.m-0.gray Actual

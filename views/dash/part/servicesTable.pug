@@ -1,0 +1,9 @@
+mixin serviceTable(title, id)
+    .widget.col-4.p-2
+        div
+            .head
+                a(href="/dash/"+id+"lvl2")
+                    .title= title
+            .body
+                div(id=id+"_bullets" style="text-align: initial;overflow: hidden;white-space: nowrap;")
+                div(id=id)

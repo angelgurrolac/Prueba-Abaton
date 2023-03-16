@@ -1,0 +1,16 @@
+mixin diskwin(title)
+    .widget.p-2.col-6
+        div
+            .head
+                .title= title
+            .body
+                table(style="width:100%;")
+                    tr 
+                        td 
+                            canvas#disk(style="width:90%;height:100px") 
+                        td
+                            p.mb-3 C:
+                            br
+                            p.mt-3 D:
+                        td 
+                            canvas#diskbar(style="width:90%;height:100px") 

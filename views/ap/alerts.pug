@@ -1,0 +1,22 @@
+mixin alerts(title, id)
+    .widget.col-md-12.col-sm-12.col-lg-12.col-xl-12.p-2
+        div
+            .head
+                .filters
+                    a(href="#")
+                        h4.m-0= title
+                    .text-end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+            .body 
+                .row
+                    table.table.display(style="width:100%", id=id)
+                        thead
+                            tr
+                                th Nombre de la AP
+                                th Frecuencia
+                                th Uso de Memoria
+                                th Uso de CPU
+                                th Uso de radio
+                                th
+                        tbody

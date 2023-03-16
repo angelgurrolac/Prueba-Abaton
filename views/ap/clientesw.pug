@@ -1,0 +1,33 @@
+mixin clientesw(id)
+    .widget.col-md-12.col-sm-12.col-lg-12.col-xl-12.p-2
+        div
+            .head
+                .filters
+                    a(href="#")
+                        h4.m-0 Clientes wireless 
+                    .text-end
+                        .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+            .body 
+                .row    
+                    .col-4
+                        h1.green 84% 
+                        span Salud
+                        ul.m-0.mt-1.p-0
+                            li.m-0
+                                h3.me-2 4,872&nbsp  
+                                span Total
+                            li.m-0
+                                h3.green.me-2 4,872&nbsp
+                                span Activos
+                            li.m-0
+                                h3.gray.me-2 158&nbsp
+                                span Inactivos
+                            li.m-0
+                                h3.blue.me-2 26&nbsp
+                                span Nuevos
+                    .col-8
+                        .chart(style="height:200px; width:100%;")
+                            canvas.chart(id=id)
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

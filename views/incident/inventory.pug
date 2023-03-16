@@ -1,0 +1,22 @@
+mixin inventory()
+    div.col-md-4.widget
+        div
+            .head
+                h5 Control de inventario 
+            .body
+                canvas#chartHistogramInventory(style="width:100%; height: 170px; margin-top: 10px")
+                br
+                table(style="width:100%; font-size: 12px; text-align: center;")
+                    tr
+                        td(style="vertical-align: middle")
+                            .bullet.lightIn(style="margin: 0px 20px 0 10px;")
+                            h6(style="margin:0") Total
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;")
+                            h6(style="margin:0") Asignado
+                        td(style="font-size: 24px; font-weight: 800;")
+    block scripts
+        script(src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0")
+        script(src="/javascripts/dash/main/inventory.js")
+        script chartHistogramInventory();
+        script updateChartHistogramInventory();
+        

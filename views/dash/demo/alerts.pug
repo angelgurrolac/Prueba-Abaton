@@ -1,0 +1,45 @@
+mixin alerts()
+    .col-12.widget.p-1
+        div
+            .head
+                .filters
+                    h5 Agentes con alertas activas - tabla
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("agents")
+            hr
+            table.table.table-dark.text-center.table-stripped.no-wrap#agents(style="width:100%;margin-top:2%;margin-bottom:2%")
+                thead
+                    th Fecha inicio
+                    th Fecha fin
+                    th Nombre
+                    th Expresión 
+                    th Agentes
+                tbody
+            hr
+            .text-end
+                p.updatetext(style="font-size:10px")
+    .widget.col-12.p-1
+        div
+            .head
+                .filters
+                    h5 Agentes con alertas activas - gráfica
+                    .text_end
+                        .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("agentst")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:200px;")
+                            canvas#agentst(style="margin-top: 20px")
+                .row 
+                    .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+                        .bullet(style="margin: 0px 20px 0 10px;background-color:#4D8FD6")
+                        h5(style="margin:0") Agentes con alertas&nbsp;
+                        h3#agentstactual
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

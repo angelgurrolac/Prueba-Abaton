@@ -1,0 +1,62 @@
+extends ../../layout
+include ../part/filters
+include ../part/servicesTable
+include ../part/overall
+include ../part/server
+include ../part/test
+include ../part/singleCanvas
+include ../part/processesTable
+include ../part/diskwin
+include ../part/abailabilityLine
+
+block head
+    style.
+        #server {
+            font-size: 1.5em;
+        }
+        #server .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        #server .sem.green {
+            background-color: #36BA6E;
+        }
+        #server .sem.yellow {
+            background-color: #FBBC05;
+        }
+        #server .sem.red {
+            background-color: #F6404F;
+        }
+        #server table.dataTable.no-footer {
+            border-bottom: none;
+        }
+
+block content
+    .row#dash
+        h1.title Windows
+        .row
+            +overall("Salud General","win_health","Availability")
+            +availabilityLine("Disponibilidad","win_line_health","8")
+            //- .widget.col-5.p-2
+            //-     div
+            //-         canvas#win_line_health(style="width:95%; height:125px")
+        .row 
+            +singleCanvas("CPU","cpu","6")
+            +singleCanvas("RAM","ram","6")
+        .row
+            +processesTable("Processes","processes")
+            +diskwin("Disk")
+
+
+       
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/dash/lvl2/win.js") 
+    script win();
+    script updatewin();

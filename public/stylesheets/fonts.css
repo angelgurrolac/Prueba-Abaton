@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('fonts/Bahnschrift.woff2') format('woff2'),
+        url('fonts/Bahnschrift.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url('fonts/Tahoma.woff2') format('woff2'),
+        url('fonts/Tahoma.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,49 @@
+.modal-content {
+    background-color: #333436;
+}
+
+table.dataTable tbody tr {
+    background-color: transparent;
+}
+
+.dataTables_wrapper {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_processing {
+        color: white !important;
+        margin: 10px 0;
+    }
+
+    .dataTables_paginate {
+        color: white !important;
+
+        .paginate_button {
+            color: white !important;
+
+            &.current {
+                border: 1px solid $BACK1;
+                background-color: $BACK1;
+
+                &:hover {
+                    border: 1px solid #979797;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+    color: white !important;
+}
+
+.table > :not(:last-child) > :last-child > * {
+    border-bottom: none;
+}
+
+table.table, .table td, .table th {
+    color: #ffffff;
+    background-color: #343a40;
+    border-color: #454d55;
+}

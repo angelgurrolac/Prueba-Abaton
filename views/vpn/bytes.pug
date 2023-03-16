@@ -1,0 +1,15 @@
+mixin bytes(title ,id, bytes)
+    .widget.col-md-6
+        div
+            .head 
+                h5= title
+            .body
+                table(style="width:100%;")
+                    tr
+                        td
+                            h4 bytes/sec
+                            br
+                            h3.green= bytes
+                    tr
+                        td.text-center
+                            canvas(style="width:450px;height:200px;" id=id)

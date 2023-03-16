@@ -1,0 +1,18 @@
+mixin w12(img, title, bad, good, total, sem, col, link)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                a(href=link)
+                    .rounded.text-center.card-sem(class=sem)
+                        img(src="/images/icons/"+img+".png", alt="", style="width:60px;height:60px;padding: 10px;")
+                    .text-end.pt-1
+                        h4.mb-0.text-end= title
+            .card-footer.p-2.border-0
+                .row    
+                    .col-6.p-0.mt-2
+                        h3.mb-0.green= good
+                        h3.mb-0 / 
+                        h3.mb-0.gray= total
+                    .col-6.text-end.p-0
+                        h1.title.red= bad
+                

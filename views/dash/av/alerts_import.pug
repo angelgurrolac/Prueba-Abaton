@@ -1,0 +1,35 @@
+mixin alerts_import()
+    .col-5
+        .widget
+            div
+                .head
+                    h4 Alerts by importance
+                .body
+                    table(style="width: 100%")
+                        tr
+                            td(style="height: 2em")
+                                .alsem.high
+                            td High
+                            td
+                                #alert_import_high
+                            td(rowspan="5" style="width:70%")
+                                canvas#alert_import(style="width: 100%; height: 15em")
+                        tr
+                            td(style="height: 2em")
+                                .alsem.med
+                            td Medium
+                            td
+                                #alert_import_med
+                        tr
+                            td(style="height: 2em")
+                                .alsem.low
+                            td Low
+                            td
+                                #alert_import_low
+                        tr
+                            td(style="height: 2em")
+                            td Total
+                            td
+                                #alert_import_total
+                        tr
+                            td

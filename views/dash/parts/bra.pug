@@ -1,0 +1,26 @@
+mixin bra(build,link)
+    .widget.col-12.p-1
+        div
+            .head
+                .filters
+                    a(href="") 
+                        h5 Filtrar por edificios
+                    .text-end
+                        a(href=link) 
+                            h5 Borrar Filtro
+                        img.close(src="/images/icon-btn-close.svg")
+            .body
+                .row
+                    -for(let bra of build)
+                        -if(bra.ID == buildid)
+                            .col-md-2.mx-auto.my-auto.text-center(style="background-color:#027197")
+                                a(href=link + "/" + bra.ID)
+                                    h5=bra.Name
+                                    .head(style="border-bottom: none")
+                                        .sem(class="green" id=bra.ID)
+                        -else
+                            .col-md-2.mx-auto.my-auto.text-center(style="background-color:#E3EEF4")
+                                a(href=link + "/" + bra.ID)
+                                    h5=bra.Name
+                                    .head(style="border-bottom: none")
+                                        .sem(class="green" id=bra.ID)

@@ -1,0 +1,36 @@
+mixin overall(title, id, text)
+    .widget.col-4.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/health/" + title)
+                        h4.title= title    
+                    .text-end
+            .body
+                table
+                    tr
+                        td(colspan = 3)
+                            h4 Salud
+                    tr
+                        td
+                            canvas(id=id, style="margin-left: 20px; width:250px; height:110px")
+                            -if(text == "Availability")
+                                p(style="margin-left:110px;")= text
+                            -else
+                                p(style="margin-left:100px;")= text
+                table(style="width:100%")
+                    tr 
+                        td
+                            i.bi.bi-file-earmark-bar-graph(style="font-size: 30px;")
+                        td.text-center
+                            h4 95%
+                            br
+                            p Total
+                        td.text-center
+                            h4 98%
+                            br
+                            p Meta
+                        td.text-center
+                            h4 96%
+                            br
+                            p Promedio

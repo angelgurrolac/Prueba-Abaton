@@ -1,0 +1,21 @@
+mixin sql_trans(id)
+    .widget.col-8.p-2
+        div
+            .head
+                a(href="/dash/"+id+"lvl2")
+                    .title Transaction Logs
+                
+            .body
+                table(style="width: 100%")
+                    tr 
+                        td
+                            .number-2#sqlTrans 152%
+                            .label Transactions
+                        td.d-flex
+                            canvas(style="width:600px;height:100px" id="cpu_line")
+                    tr 
+                        td
+                            .number-2#sqlRespTime 17,521ms
+                            .label Avg. Response time
+                        td.d-flex
+                            canvas(style="width:600px;height:100px" id="ram_line")

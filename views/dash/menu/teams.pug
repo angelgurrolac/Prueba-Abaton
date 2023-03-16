@@ -1,0 +1,62 @@
+mixin teams(title,id)
+    .widget.col-md-12.col-sm-12.col-lg-6.col-xl-4.col-xxl-4.p-2
+        div
+            .head
+                .filters
+                    a(href="/dash/te/" + id)
+                        h5.title= title
+                    .text-end
+                        .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+            .body
+                .row
+                    .col-12 
+                        a(href="/dash/te/" + id)
+                            h5 Infraestructura
+                .row.g-0
+                    .col-xs-12.col-md-6.col-lg-6.col-xl-4.col-xxl-3.mx-auto.my-auto.text-center
+                        a(href="/dash/te/" + id)
+                            canvas(id = id + "_health" style="width: 90px; height: 90px;display: inherit;")
+                    .col-xs-12.col-md-6.col-lg-6.col-xl-4.col-xxl-3.mx-auto.my-auto.text-center
+                        h6.green.countDecimal(id = id + "_jitter" style="font-size: 24px;margin: 0 5px;") 
+                        br
+                        p Jitter
+                    .col-xs-12.col-md-6.col-lg-6.col-xl-4.col-xxl-3.mx-auto.my-auto.text-center
+                        h6.green.countDecimal(id = id + "_latency" style="font-size: 24px;margin: 0 5px;")
+                        br
+                        p Latencia
+                    .col-xs-12.col-md-6.col-lg-6.col-xl-4.col-xxl-3.mx-auto.my-auto.text-center
+                        h6.green.countInteger(id = id + "_loss" style="font-size: 24px;margin: 0 5px;")
+                        br
+                        p Loss
+                .row.pt-2
+                    .col-6.mx-auto.my-auto.text-center
+                        a(href="#")
+                            h5 Usuarios VIP
+                        br
+                        a(href="#")
+                            h5.green.countInteger.usersvip(style="font-size: 24px;margin: 0 10px;") 
+                            h5.red.countInteger.usersvipbad(style="font-size: 24px;margin: 0 10px;") 
+                    .col-6.mx-auto.my-auto.text-center
+                        a(href="/dash/alerts/" + id)
+                            h5 Alertas activas
+                        br
+                        a(href="/dash/alerts/" + id) 
+                            h5.countInteger(style="font-size: 24px;margin: 0 10px;", id = id + "_alerts") 
+                .row.pt-2
+                    .col-6.mx-auto.my-auto.text-center
+                        a(href="#")
+                            h5 Usuarios
+                        br
+                        a(href="#") 
+                            h5.green.countInteger.users(style="font-size: 24px;margin: 0 10px;") 
+                            h5.red.countInteger.usersbad(style="font-size: 24px;margin: 0 10px;") 
+                    .col-6
+                .row    
+                    p.updatetext.text-end(style="font-size:10px")
+
+    block scripts
+        script(src="/javascripts/menu/teams.js")
+        script teams();
+        script updateteams();
+

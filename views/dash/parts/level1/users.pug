@@ -1,0 +1,64 @@
+extends ../../../layout
+
+block content
+    
+    a(href="/dash/menu") 
+        i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+    h1=data.branch.title
+    nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+        ol.breadcrumb
+            li.breadcrumb-item.active(aria-current="page")
+                a(href="/dash/menu") Inicio
+            li.breadcrumb-item Usuarios
+    .row#dash
+        .col-md-12.widget
+            div
+                .head
+                    .filters
+                        h5 Top 10 usuarios VIP
+                        img.close(src="/images/icon-btn-close.svg")
+                    .filters 
+                        input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                        input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                        input.filterYear(type="button" onclick="filterYear()" value="Año")
+                br
+                table.table.table-dark.table-stripped#tableUsersvip.text-center(style="width:100%;margin-top:2%;margin-bottom:2%")
+                    thead
+                        th Nombre
+                        th S.O.
+                        th IP 
+                        th Velocidad de red
+                        th Ubicación
+                        th Jitter 
+                        th Latencia 
+                        th Loss
+                        th Última actualización
+                        th Última modificación
+                    tbody
+        .col-md-12.widget
+            div
+                .head
+                    .filters
+                        h5 Top 10 usuarios 
+                        img.close(src="/images/icon-btn-close.svg")
+                    .filters 
+                        input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                        input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                        input.filterYear(type="button" onclick="filterYear()" value="Año")
+                br
+                table.table.table-dark.table-stripped#tableUsers.text-center(style="width:100%;margin-top:2%;margin-bottom:2%")
+                    thead
+                        th Nombre
+                        th S.O.
+                        th IP 
+                        th Velocidad de red
+                        th Ubicación
+                        th Jitter 
+                        th Latencia 
+                        th Loss
+                        th Última actualización
+                        th Última modificación
+                    tbody
+
+    script(src="/javascripts/menu/users.js")
+    script loopDash();

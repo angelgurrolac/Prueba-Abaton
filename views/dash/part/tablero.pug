@@ -1,0 +1,28 @@
+mixin tablero(img, title, col, bad1, bad2, metrica1, metrica2, good1, total1, good2, total2, color)
+    .widget.col-sm-6.col-md-4.col-lg-3.p-2(class="col-xl-"+ col)
+        .card 
+            .card-header.py-1.px-1.border-0
+                a(href="#")
+                    .rounded.text-center.card-sem(style="background-color:"+color+";")
+                        img(src="/images/"+img+".png", alt="", style="width:50px;heigth:50px;padding:10px;")
+                    .text-center.pt-2
+                        h5.title=title 
+                    .row.text-center
+                        .col-6.p-1
+                            h2.mb-0.red=bad1
+                        .col-6.p-1
+                            h2.mb-0.red=bad2
+                    .row.text-center
+                        .col-6.p-0
+                            p.mb-0.gray=metrica1
+                        .col-6.p-0
+                            p.mb-0.gray=metrica2
+                    .row.text-center
+                        .col-6.p-0
+                            h6.mb-0.green=good1
+                            h6.mb-0 /
+                            h6.mb-0.gray=total1
+                        .col-6.p-0
+                            h6.mb-0.green=good2
+                            h6.mb-0 /
+                            h6.mb-0.gray=total2

@@ -1,0 +1,22 @@
+extends ../layout
+include menu/teams
+
+block content
+    .row
+        .col-12
+            a(href="/dash") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1.m-0 Aplicaciones
+    .row#dash
+        +teams("Microsoft Teams","teams")
+        +teams("Microsoft Office 365","ms365")
+        +teams("Webex","webex")
+        +teams("Skype","skype")
+        +teams("ZOOM","zoom")
+
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 

@@ -1,0 +1,31 @@
+include buildings
+include filterslevel1
+mixin filters(estados)
+    .widget.col-md-12.col-sm-12.col-lg-12.col-xl-12.p-2
+        div
+            .head
+                .filters
+                    a(href="#")
+                        h4.m-0 Filtros generales
+                    .text-end
+                        img.close(src="/images/icon-btn-close.svg")
+            .body.p-1 
+                .row.period-container
+                    .col-6
+                        h6.m-0 Edificios principales:
+                        br
+                        -for (let o of data)
+                            +buildings(o.Name,o.Status,o.color,o.ID)
+                    .col-3
+                        h6.m-0 Ciudad: 
+                        select.form-control.mt-2#city
+                            -for (let o of estados)
+                                option(value=o.ID)= o.Name
+                    .col-3
+                        h6.m-0 Edificio: 
+                        select.form-control.mt-2#build
+                            -for (let o of _edificios)
+                                option(value=o.ID)= o.Name
+                br
+                -if(build)
+                    +filterslevel1()

@@ -1,0 +1,35 @@
+.widget.percent {
+    table {
+        margin: 5px 0;
+        .legend {
+            text-align: center;
+        }
+    }
+    .metric {
+        font-size: 36px;
+        text-align: center;
+    }
+    .good,
+    .bad {
+        width: 50%;
+        font-size: 16px;
+        text-align: center;
+    }
+    .neutral {
+        font-size: 14px;
+        text-align: center;
+    }
+    .neutralPercent {
+        font-size: 14px;
+        text-align: center;
+    }
+    .good {
+        color: #36BA6E;
+    }
+    .bad {
+        color: #F6404F;
+    }
+    .neutral {
+        color: #000;
+    }
+}

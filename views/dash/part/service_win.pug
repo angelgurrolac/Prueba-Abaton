@@ -1,0 +1,26 @@
+mixin service_win(id, name)
+    .widget.col-6.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/win")
+                        .title Windows
+            .body
+                table(style="width: 100%")
+                    tr 
+                        td
+                            .kpi-value.s0#avail
+                            .label Availability
+                        td.d-flex
+                            .label.mt-5.me-2 CPU
+                            canvas(style="width:90%;height:63px" id="cpu_line")
+                    tr 
+                        td(rowspan=4)
+                            #cust_adt_windows_bullets
+                        td.d-flex
+                            .label.mt-3.me-2 RAM
+                            canvas(style="width:90%;height:63px"  id="ram_line")
+                    tr 
+                        td.d-flex
+                            .label.mt-3.me-2 Disk
+                            canvas(style="width:90%;height:63px"  id="disk_bar")

@@ -1,0 +1,59 @@
+mixin incidentsTop10Types()
+    div.widget.col-md-6
+        //- FIX: Metí el contenido del widget en un div
+        div
+            div.head
+                .filters
+                    h5 Incidentes / Reportes más comunes 
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            //- TODO: mandar datos desde el ruter
+            table(style="width:100%; text-align: center;")
+                tr
+                    th Tipo
+                    th # de incidentes
+                    th Porcentaje
+                tr  
+                    td Bloqueo de usuario
+                    td 750
+                    td 25%
+                tr
+                    td Cambio de password
+                    td 560
+                    td 18.6%
+                tr
+                    td Buzón lleno
+                    td 410
+                    td 13.6%
+                tr
+                    td Cuenta expirada
+                    td 390
+                    td 13%
+                tr
+                    td Acceso a internet
+                    td 320
+                    td 10.6%
+                tr
+                    td Credencial dañada
+                    td 240
+                    td 8%
+                tr
+                    td Acceso a aplicaciones
+                    td 180
+                    td 6%
+                tr
+                    td Integración de PC a dominio
+                    td 110
+                    td 3.6%
+                tr
+                    td Cambio de equipo
+                    td 30
+                    td 1%
+                tr
+                    td Configurar impresora
+                    td 10
+                    td 0.3%
+            br

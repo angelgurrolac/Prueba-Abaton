@@ -1,0 +1,25 @@
+mixin w5(img, title, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.border-0
+                a(href="/dash/servers")
+                    .rounded.text-center.card-sem(class=sem)
+                        img(src="/images/iconos/"+img+".svg", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end
+                    h4.m-0.title= title
+                .text-end
+                    h2.title#percent-servers
+            .card-footer.py-0.px-2.border-0
+                .row    
+                    .col-6.p-0.text-center
+                        h3.mb-0.green 314
+                        h4.mb-0 /
+                        h3.mb-0.red 13
+                        br
+                        h6.m-0.title Virtuales
+                    .col-6.p-0.text-center
+                        h3.mb-0.green 10
+                        h4.mb-0 /
+                        h3.mb-0.red 1
+                        br
+                        h6.m-0.title ESXi

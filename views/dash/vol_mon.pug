@@ -1,0 +1,80 @@
+extends ../layout
+
+block content
+    #dash
+        .row
+            .col-12
+                a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 Volumen monetario
+                nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item.active(aria-current="page")
+                            a(href="/dash") Inicio
+                        li.breadcrumb-item Dashboard
+        br
+        //- .row
+        //-     .col(style="margin-bottom: 8px")
+        //-         #filterbar
+        //-             | Filtros:
+        //-             .filter Ciudad: Ciudad de México
+        //-             i.bi.bi-plus-circle.green
+        .row
+            .col-12
+                .widget
+                    div
+                        .head
+                            h4 Resumen
+                        .body
+                            table(style="width: 100%")
+                                tr
+                                    td
+                                        .kpi-value.s1#total_amount
+                                        .kpi-label Ventas totales
+                                    td.text-center(style="align-items:center;")
+                                        canvas#resumeCanvas(width="600px" height="50px")
+                                    td
+                                        .kpi-value.s2#num_stores
+                                        .kpi-label Tiendas
+                                    td
+                                        .kpi-value.s2#prod_sold
+                                        .kpi-label Prod. vendidos
+        .row 
+            .col-12
+                .widget
+                    div
+                        .head 
+                            h4 Modelo predictivo de ventas - volumen monetario
+                        .body
+                            canvas#timeline(style="width: 100%; height: 16em")
+                        .row.g-0
+                            .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#A2A29D")
+                                h5(style="margin:0") Intervalo&nbsp;
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#F76300")
+                                h5(style="margin:0") Pronostico&nbsp;
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                                h5(style="margin:0") Real&nbsp;
+        .row 
+            .col-12
+                .widget
+                    div
+                        .head 
+                            h4 Modelo predictivo de ventas - volumen transaccional
+                        .body
+                            canvas#timeline1(style="width: 100%; height: 16em")
+                        .row.g-0
+                            .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#A2A29D")
+                                h5(style="margin:0") Intervalo&nbsp;
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#F76300")
+                                h5(style="margin:0") Pronostico&nbsp;
+                                .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                                h5(style="margin:0") Real&nbsp;
+    br
+block scripts
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash/branch.js")
+    script loopDash();

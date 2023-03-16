@@ -1,0 +1,28 @@
+mixin w7(img, title, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                .rounded.text-center.card-sem(class=sem)
+                    img(src="/images/iconos/"+img+".svg", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end.pt-1
+                    h4.title= title
+            .card-footer.py-0.px-2.border-0
+                .row    
+                    .col-6.p-0.text-center
+                        h5.m-0.title Principal
+                        br
+                        h2.mb-0.green.text-end 40%
+                        br
+                        h4.mb-0.green 600 Mb
+                        br
+                        p Total
+                        h4.mb-0.gray 1.5 Gb
+                    .col-6.p-0.text-center
+                        h5.m-0.title Secundario
+                        br
+                        h2.mb-0.green.text-end 13%
+                        br
+                        h4.mb-0.green 200 Mb
+                        br
+                        p Total
+                        h4.mb-0.gray 1.5 Gb

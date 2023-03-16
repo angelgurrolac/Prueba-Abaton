@@ -1,0 +1,42 @@
+mixin store(title, id)
+    .widget.col-4.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/health/" + title)
+                        .title= title    
+                    .text-end
+            .body
+                table
+                    tr
+                        td(rowspan=3).text-center
+                            canvas(id="ad_store", style="width:100px;height:100%")
+                        td
+                            p Database name
+                            br
+                            .kpi-value.s3.green 128 GB
+                    tr  
+                        td
+                            p Free Space
+                            br
+                            .kpi-value.s3.green 60.3 GB
+                    tr  
+                        td 
+                            p Total space
+                            br
+                            .kpi-value.s3.green 99.9 GB
+                    tr
+                        td(colspan=2).text-center
+                            p.mt-3 Objects Applied / Second
+                    tr 
+                        td(colspan=2)
+                            .mt-3 
+                                canvas(id="ad_store_objects", style="margin-left: 20px; width:250px; height:110px")
+                    tr
+                        td(colspan=2).text-center
+                            .mt-2
+                                p Ramaining updates
+                                br
+                            .mt-2
+                                canvas(id="ad_store_updates", style="margin-left: 20px; width:250px; height:110px")
+                    

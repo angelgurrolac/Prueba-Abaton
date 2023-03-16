@@ -1,0 +1,60 @@
+extends ../layout
+include parts/bra
+include parts/model
+include demo/alerts
+include demo/webexGlobal
+include demo/pt-audio
+include demo/pt-video
+include demo/period-select
+
+block content
+    //- .pt-5#spinner-div
+    //-     .spinner-border.text-primary(role="status")
+    .row
+        .col-12
+            a(href="/dash/te") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1= buildname
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash/te") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash
+        //- -if(buildid === undefined)
+        +bra(data.build,"/dash/te/teams")
+    .row#dash
+        .widget.col-12.p-1
+            div
+                div.head
+                    .filters
+                        a(href="") 
+                            h5 Filtrar por fecha
+                        .text-end
+                            img.close(src="/images/icon-btn-close.svg")
+                .container-fluid
+                    .row(style="padding-top: 8px;padding-bottom: 4px;")
+                        +period-select("global")
+    .row#dash
+        +model()
+    .row#dash
+        .col-12
+            h2 Global Status
+    .row#dash
+        +webexGlobal()
+    .row#dash
+        h2 Meeting Session Initiation - Audio
+    .row#dash
+        +pt-audio()
+    .row#dash
+        h2 Meeting Session Initiation - Video
+    .row#dash
+        +pt-video()
+        br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/main.js")
+    script(src="/javascripts/demo/webexGlobal.js")
+    script loopDash();

@@ -1,0 +1,24 @@
+mixin errors(name,id)
+    .widget.col-4.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/win")
+                        .title=name
+            .body
+                table(style="width: 100%").text-center
+                    tr
+                        td
+                            .kpi-value.s0.yellow 2
+                            .label Replication Links
+                        td
+                            .kpi-value.s0.green 0
+                            .label Schema Mismatches
+                    tr
+                        td
+                            .kpi-value.s0.red 3
+                            .label DNS Entries
+                        td
+                            .kpi-value.s0.green 0
+                            .label DRA Errors
+            

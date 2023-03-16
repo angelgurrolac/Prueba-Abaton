@@ -1,0 +1,112 @@
+mixin pt-audio()
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Productivity Tools - Audio
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptasummary")
+            .body
+                .row 
+                    .col-12
+                        table.table.text-center.table-stripped.no-wrap#pt-audio-summary(style="width:100%;min-height:210px!important;")
+                            thead
+                                tr
+                                    th Fecha
+                                    th Jitter
+                                    th Latency
+                                    th Loss
+                            tbody
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Audio - Jitter
+                    .text_end
+                        #sem-jitter.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptajitter")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptajitter(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#355C7D")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptajitteractual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptajittermax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptajitter_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Audio - Latencia
+                    .text_end
+                        #sem-latency.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    +period-select("ptalatency")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptalatency(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#FD9407")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptalatencyactual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptalatencymax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptalatency_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Audio - Loss
+                    .text_end
+                        #sem-loss.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptaloss")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptaloss(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#06cc5f")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptalossactual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptalossmax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptaloss_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

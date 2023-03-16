@@ -1,0 +1,43 @@
+mixin networkAd(title, id, text)
+    .widget.col-4.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/health/" + title)
+                        .title= title    
+                    .text-end
+            .body
+                table
+                    tr
+                        td(colspan = 3)
+                            h4 Connected Users
+                    tr
+                        td.text-center
+                            .kpi-value.s0.green.mb-4 10
+                    tr
+                        td(colspan = 3)
+                            h4 LDAP CLient Sessions
+                    tr
+                        td.text-center
+                             .kpi-value.s0.green.mb-4 32
+                    tr
+                        td.text-center.m-2
+                            p Ping
+                            br
+                            h4.green.mb-4 0 ms
+                    tr
+                        td.text-center
+                            p LDAP Bind Time
+                            br
+                            h4.yellow.mb-4 60 ms
+                    tr
+                        td.text-center
+                            p LDAP Search Time
+                            br
+                            h4.green.mb-4 0 ms
+                    tr
+                        td.text-center
+                            p Theotherical BandWidth
+                            br
+                            .p-2
+                                canvas(id="ad_bandwidth_"+id, style="margin-left: 20px; width:250px; height:110px")

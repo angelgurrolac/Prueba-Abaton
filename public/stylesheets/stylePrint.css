@@ -1,0 +1,214 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@page {
+  size: letter;
+  margin: 0.5cm; }
+
+h1 {
+  page-break-before: always; }
+
+h1, h2, h3, h4, h5 {
+  page-break-after: avoid; }
+
+table, figure, .widget {
+  page-break-inside: avoid; }
+
+header, .navbar, footer, #sidebar, .period-container, .breadcrumb, .printHide, .fa-arrow-left, .dataTables_length, .dataTables_filter, .dataTables_paginate {
+  display: none; }
+
+div[class|='rainbow'] {
+  display: none; }
+
+.widget {
+  width: 6 in;
+  height: 4.5in; }
+
+.piePrint {
+  width: 20cm; }
+
+#canvas {
+  page-break-after: always; }
+
+div {
+  page-break-inside: avoid; }
+
+h1 {
+  display: inline-block; }
+
+h4 {
+  font-size: 1.2rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: inline-block; }
+
+h6 {
+  margin-left: 5%; }
+
+p {
+  margin: 0; }
+
+ul li {
+  list-style-type: none;
+  margin: 5% 0; }
+
+ul li p {
+  font-size: 1.2rem; }
+
+#dash {
+  padding-top: 8px; }
+  #dash .widget {
+    padding: 6px 0 0 10px; }
+    #dash .widget > div {
+      width: 100%;
+      padding: 4px 10px;
+      border-radius: 8px; }
+    #dash .widget .head {
+      padding: 5px 10px; }
+      #dash .widget .head .sem {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        display: inline-block; }
+        #dash .widget .head .sem.red {
+          background-color: #F6404F; }
+        #dash .widget .head .sem.green {
+          background-color: #36BA6E; }
+        #dash .widget .head .sem.yellow {
+          background-color: #FF8E0E; }
+      #dash .widget .head .filters {
+        width: 100%;
+        justify-items: initial;
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 2px 0 0 0; }
+        #dash .widget .head .filters .close {
+          width: 18px;
+          margin: 4px -15px 3px 10px;
+          float: right; }
+    #dash .widget .body {
+      padding: 10px; }
+  #dash .bullet {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0 10px; }
+    #dash .bullet.darkblue {
+      background-color: #08243c; }
+    #dash .bullet.lightIn {
+      background-color: #FF8E0E; }
+    #dash .bullet.lightOut {
+      background-color: #05abe0; }
+    #dash .bullet.lightTotal {
+      background-color: #272c4d; }
+    #dash .bullet.yellow {
+      background-color: #FF8E0E; }
+    #dash .bullet.lightblue {
+      background-color: #4fc6eb; }
+    #dash .bullet.blue1 {
+      background-color: #4D8FD6; }
+    #dash .bullet.orange {
+      background-color: #D77420; }
+    #dash .bullet.lila {
+      background-color: #B769E9; }
+    #dash .bullet.yellow {
+      background-color: #FEBC46; }
+    #dash .bullet.aqua {
+      background-color: #27CBB9; }
+    #dash .bullet.pink {
+      background-color: #E7537F; }
+    #dash .bullet.blue2 {
+      background-color: #67ABF3; }
+  #dash .rectangle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 3px;
+    margin: 0 10px; }
+
+.breadcrumb {
+  margin: 15px 0 0px 0; }
+
+body {
+  padding: 0;
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif; }
+
+h1 {
+  display: inline-block;
+  margin: 0px;
+  font-size: 36px;
+  margin-bottom: -10px; }
+
+h4 {
+  font-size: 1.2rem; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: inline-block; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 20px; }
+
+h5 {
+  font-size: 18px; }
+
+h6 {
+  margin-left: 5%;
+  font-size: 14px; }
+
+p {
+  margin: 0; }
+
+ul li {
+  list-style-type: none;
+  margin: 5% 0; }
+
+i,
+span {
+  display: inline-block; }
+
+.green {
+  color: #36BA6E; }
+
+.red {
+  color: #F6404F; }
+
+.yellow {
+  color: #FF8E0E; }
+
+.modal-content {
+  background-color: #333436; }
+
+table.dataTable tbody tr {
+  background-color: transparent; }
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing {
+  margin: 10px 0; }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  border: 1px solid #323233;
+  background-color: #323233; }
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    border: 1px solid #979797;
+    background-color: transparent; }
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom: none; }
+
+/*# sourceMappingURL=stylePrint.css.map */

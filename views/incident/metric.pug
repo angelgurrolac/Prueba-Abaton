@@ -1,0 +1,30 @@
+mixin metric(title, data, percent, id)
+    -let N=data.length
+    -let count = 0
+    div.widget.metric(class="col-md-" + (2*N))
+        //- FIX: Metí el contenido del widget en un div
+        div
+            .head
+                h5= title
+            .body
+                -for (let o of data)
+                    table.d-inline-block(style=" width:"+Math.floor(100/N)+"%" id=id + count)
+                        -count ++
+                        tr
+                            td.legend(colspan=2)= o.legend
+                        tr
+                            -if(o.min)
+                                td.metric.countIntegerMin(colspan=2)
+                                    = (o.metric) + " min"
+                            -else
+                                td.metric.countInteger(colspan=2)
+                                    = (o.metric) + percent
+                        tr
+                            td.neutral &nbsp;
+                        tr
+                            td.neutral.countDecimalPDelta(colspan=2)
+                                -if (o.delta > 0)
+                                    | &#9650;
+                                -else
+                                    | &#9660;
+                                = Math.abs(o.delta * 100).toFixed(2) + "%"

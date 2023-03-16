@@ -1,0 +1,42 @@
+mixin status(title)
+    .widget.col-md-6.col-sm-6.col-lg-4.col-xl-4.p-2
+        div
+            .head
+                .filters
+                    a(href="#")
+                        h4.m-0= title
+                    .text-end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+            .body 
+                .row
+                    .alert.alert-danger.align-items-center.p-2.m-0.mb-2(role="alert" style="background-color:#CF3434;")
+                        .row 
+                            .col-8
+                                p.m-0 Expirados 
+                            .col-4.text-end
+                                h5.m-0 2
+                    .alert.alert-warning.align-items-center.p-2.m-0.mb-2(role="alert" style="background-color:#FB5A00;")
+                        .row 
+                            .col-8
+                                p.m-0 Expiran en una semana 
+                            .col-4.text-end
+                                h5.m-0 0
+                    .alert.alert-warning.align-items-center.p-2.m-0.mb-2(role="alert" style="background-color:#ECC94E;")
+                        .row 
+                            .col-8
+                                p.m-0 Expiran en 7 a 30 días
+                            .col-4.text-end
+                                h5.m-0 0
+                    .alert.alert-warning.align-items-center.p-2.m-0.mb-2(role="alert" style="background-color:#B2AF45;")
+                        .row 
+                            .col-8
+                                p.m-0 Expiran en 30 a 90 días
+                            .col-4.text-end
+                                h5.m-0 0
+                    .alert.alert-success.align-items-center.p-2.m-0.mb-2(role="alert" style="background-color:#49BF62;")
+                        .row 
+                            .col-8
+                                p.m-0 Expiran en más de 90 días
+                            .col-4.text-end
+                                h5.m-0 75

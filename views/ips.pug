@@ -1,0 +1,42 @@
+extends layout
+include vpn/protocolos
+include vpn/chartDoughnut
+include vpn/logs
+
+block content
+    //- .row#dash
+    //-     +filters(_estados)
+    .row
+        .col-12
+            a(href="/dash") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1 IPS - IDS 
+            //h1 Dashboard
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash
+        +protocolos()
+        +chartDoughnut("Weird Packets", "packets","wp")
+        +chartDoughnut("SSL Cyphers", "ssl","sslc")
+        +chartDoughnut("MIME Types", "mime","mimet")
+        +chartDoughnut("Top sending hosts", "top","top")
+        +logs("logs")
+  
+  
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/libs/Custom.js") 
+    script(src="/javascripts/dash/vpn.js") 
+    script(src="/javascripts/dash/ids.js") 
+    script vpnbar();
+    script licencias();
+    script setupTable();
+    script charts();
+    script update();
+    script updatevpn2();

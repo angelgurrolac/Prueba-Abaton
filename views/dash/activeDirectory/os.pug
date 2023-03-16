@@ -1,0 +1,46 @@
+mixin os(name,id)
+    .widget.col-8.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/win")
+                        .title=name
+            .body
+                table(style="width: 100%").text-center
+                    tr
+                        td
+                            .label CPU Usage
+                        td(colspan=2)
+                            .label System Disk
+                        td
+                            .label.mb-2 Physical RAM
+                        td
+                            .label Top CPU Consumer
+                    tr
+                        td(rowspan=3)
+                            canvas(style="width:150px; height:110px" id="ad_os_cpu")
+                        td(rowspan=3)
+                            canvas(style="width:110px; height:110px" id="ad_os_disk")
+                        td(rowspan=3)
+                            .label Free Space
+                            .kpi-value.s3.green 60.3 GB
+                            .label Total Space
+                            .kpi-value.s3.green 99.9 GB
+                        td
+                            canvas(style="width:150px; height:50px" id="ad_os_ram")
+                        td
+                            .kpi-value.s3.green LSASS
+                    tr
+                        td
+                            .label Processor Queue
+                        td
+                            .label Top Memory Consumer
+                    tr
+                        td
+                            canvas(style="width:150px; height:50px" id="ad_os_queue")
+                        td
+                             .kpi-value.s3.green SVCHOST #8
+
+
+
+                             

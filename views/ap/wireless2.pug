@@ -1,0 +1,16 @@
+mixin wireless2(img, title, real, total, metric, sem, col)
+    .widget.col-md-12.col-sm-12.col-lg-3.p-2(class="col-xl-"+ col)
+        .card
+            .card-header.p-2.pt-2.border-0
+                .rounded.text-center.card-sem(class=sem)
+                    img(src="/images/"+img+".png", alt="", style="width:60px;height:60px;padding: 10px;")
+                .text-end.pt-1
+                    h2.title.red= title
+            .card-footer.p-2.border-0
+                .row    
+                    .col-7.p-0
+                        h4.mb-0.green= real
+                        h4.mb-0 / 
+                        h4.mb-0.gray= total
+                    .col-5.text-end.p-0
+                        h6.mb-0.text-end= metric

@@ -1,0 +1,112 @@
+mixin pt-video()
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Productivity Tools - Video
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptvsummary")
+            .body
+                .row 
+                    .col-12
+                        table.table.table-dark.text-center.table-stripped.no-wrap#pt-video-summary(style="width:100%;max-height:180px!important;")
+                            thead
+                                tr
+                                    th Fecha
+                                    th Jitter
+                                    th Latency
+                                    th Loss
+                            tbody
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Video - Jitter
+                    .text_end
+                        #sem-jitter.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptvjitter")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptvjitter(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#a7b300")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptvjitteractual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptvjittermax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptvjitter_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Video - Latencia
+                    .text_end
+                        #sem-latency.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    +period-select("ptvlatency")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptvlatency(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#118DAC")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptvlatencyactual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptvlatencymax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptvlatency_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-6.p-1
+        div
+            .head
+                .filters
+                    h5.title Network Video - Loss
+                    .text_end
+                        #sem-loss.sem
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("ptvloss")
+            .body
+                .row.g-0
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                        .rainbow-S-6.ms-3(style="height: 200px")
+                    .col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        div(style="height:256px;")
+                            canvas#ptvloss(style="margin-top: 20px;height:250px;width:450px;")
+                .row 
+                    .col-lg-1.col-md-1.col-xs-1.mx-auto.my-auto.text-center
+                    .col-lg-9.col-md-9.col-xs-9.mx-auto.my-auto.text-center
+                        .rectangle(style="background-color:#4D8FD6")
+                        h5(style="margin:0") Avg&nbsp;
+                        h4#ptvlossactual
+                        .rectangle(style="background-color:#8C8C8C")
+                        h5(style="margin:0") Max&nbsp;
+                        h4#ptvlossmax
+                    .col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                        h4#ptvloss_benchmark_delta
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")

@@ -1,0 +1,21 @@
+mixin contacts()
+    div.col-md-4.widget#contacts
+        div
+            .head
+                h5 Tickets levantados a través de:
+            .body
+                canvas#chartHistogramContacts(style=style="width:100%; height: 170px; margin-top: 10px")
+                br
+                table(style="width:100%; font-size: 12px; text-align: center;")
+                    tr
+                        td(style="vertical-align: middle")
+                            .bullet.lightIn(style="margin: 0px 20px 0 10px;background-color:#2C9E8E")
+                            h6(style="margin:0") Resueltos
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#004D96")
+                            h6(style="margin:0") Total
+                        td(style="font-size: 24px; font-weight: 800;")
+    block scripts
+        script(src="/javascripts/dash/main/contacts.js")
+        script chartHistogramContacts();
+        script updateChartHistogramContacts();
+        

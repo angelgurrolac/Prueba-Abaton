@@ -1,0 +1,92 @@
+extends ../layout
+
+include part/store
+
+block content
+    #dash
+        .row
+            .col-12
+                a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 Tiendas
+                nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item.active(aria-current="page")
+                            a(href="/dash") Inicio
+                        li.breadcrumb-item Dashboard
+        br
+        //- .row
+        //-     .col(style="margin-bottom: 8px")
+        //-         #filterbar
+        //-             | Filtros:
+        //-             .filter Ciudad: Ciudad de México
+        //-             i.bi.bi-plus-circle.green
+        //- .row
+        //-     .col-12
+        //-         .widget
+        //-             div
+        //-                 .head
+        //-                     h4 Resumen
+        //-                 .body
+        //-                     table(style="width: 100%")
+        //-                         tr
+        //-                             td
+        //-                                 .kpi-value.s1#total_amount
+        //-                                 .kpi-label Ventas totales
+        //-                             td.text-center(style="align-items:center;")
+        //-                                 canvas#resumeCanvas(width="600px" height="50px")
+        //-                             td
+        //-                                 .kpi-value.s2#num_stores
+        //-                                 .kpi-label Tiendas
+        //-                             td
+        //-                                 .kpi-value.s2#prod_sold
+        //-                                 .kpi-label Prod. vendidos
+        .row
+            .col-6
+                .widget
+                    div
+                        .head
+                            h4 Top categorías
+                        .body
+                            table(style="width: 100%")
+                                tr 
+                                    td 
+                                        canvas#topcat(style="width: 100%; height: 17em")
+            .col-6
+                .widget
+                    div
+                        .head
+                            h4 Top productos
+                        .body
+                            table(style="width: 100%")
+                                tr 
+                                    td
+                                        canvas#topprod(style="width: 100%; height: 17em")
+        //- .row 
+        //-     .col-12
+        //-         .widget
+        //-             div
+        //-                 .head 
+        //-                     h4 Modelo predictivo de ventas
+        //-                 .body
+        //-                     canvas#timeline(style="width: 100%; height: 16em")
+        //-                 .row.g-0
+        //-                     .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+        //-                         .rectangle(style="margin: 0px 10px 0 10px;background-color:#8C8C8C")
+        //-                         h6(style="margin:0") Intervalo&nbsp;
+        //-                         .rectangle(style="margin: 0px 10px 0 10px;background-color:#ee3528")
+        //-                         h6(style="margin:0") Pronostico&nbsp;
+        //-                         .rectangle(style="margin: 0px 10px 0 10px;background-color:#007dc5")
+        //-                         h6(style="margin:0") Real&nbsp;
+        .row
+            h2 Detalle de las tiendas
+        .row
+            -for (let o of branches)
+                +store(o)
+    br
+block scripts
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash/branch.js")
+    script loopDash();

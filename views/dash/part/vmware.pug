@@ -1,0 +1,39 @@
+extends ../layout
+include widget/regiones
+include widget/filtro
+include widget/ram
+include widget/datos
+include vmware/tablero
+include widget/ram2
+include vmware/datostipo
+
+block content
+    #dash.p-0
+        h1 Vmware 
+        nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash/vmware") Vmware
+        .row#dash
+            +regiones("Regiones")
+            +filtro()
+            +tablero("CPU", "45%")
+            +tablero("RAM", "50%")
+            +tablero("Disco", "50%")
+        .row#dash
+            +ram("ESXi-HX-COR-N2 CPU", "cpu")   
+            +ram("ESXi-HX-COR-N2 RAM", "ram") 
+            +ram("ESXi-HX-COR-N2 Disco", "disk")   
+            +ram("CPU máquina virtual Vsphere", "cpuvirtual")   
+            +ram("RAM máquina virtual Vsphere", "ramvirtual")  
+            +ram2("RAM máquina virtual asignada") 
+            +datostipo()
+            +datos("Tipos de datos usados")  
+
+
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/dash/lvl1/vmware.js") 
+    script loopDash();

@@ -1,0 +1,11 @@
+mixin chartDoughnut(title, id, id2)
+    .widget.col-md-12.col-sm-12.col-lg-6.col-xl-6.p-2
+        div
+            .head
+                h5=title
+            .body 
+                table(style="width:100%;")
+                    tr
+                        td.text-center
+                            canvas(style="margin-top: 10px;width:200px;height:200px;" id= id)
+                        td(id= "data_"+id2)

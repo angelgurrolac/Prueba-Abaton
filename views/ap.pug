@@ -1,0 +1,56 @@
+extends layout
+include ap/wireless2
+include ap/clientesw
+include ap/clientesd
+include ap/filters
+include ap/alerts
+include ap/aps 
+include ap/visits
+
+block content
+    //- .row#dash
+    //-     +filters(_estados)
+    .row
+        .col-12
+            a(href="/dash") 
+                i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1 Access point
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash
+        //- +wireless()
+        +wireless2("map","1","24","25","Tiendas","green","2")
+        +wireless2("wifi","10","431","441","Access point","green","3")
+        +wireless2("customer","1","315","316","Users VIP","green","2")
+        +wireless2("user_normal","101","13,407","13,508","Users","yellow","3")
+        +wireless2("icons/bell","14","100","114","Alertas","yellow","2")
+    .row 
+        p.updatetext.text-end(style="font-size:10px")
+    .row#dash
+        +clientesw("chart")
+        //- +clientesw("chart2")
+        +clientesd("Número de clientes por SSID","clientesid")
+        +clientesd("Número de clientes por banda (frecuencia)","clientesb")
+        +alerts("Ap's con utilización mayor a 70%","ap70")
+        +alerts("Ap's event drop in total radio throughput","apdrop")
+        +alerts("Ap's con salud en rojo","apred")
+        +alerts("Ap's con salud en amarillo","apyellow")
+        +aps("Ap's con servicio en rojo","apredchart","#D7472E")
+        +aps("Ap's con servicio en amarillo","apyellowchart","#FF8E0E")
+        +alerts("Ap's VIP","apvip")
+        +visits("Distribución de visitas: Horas del día","visitsday")
+        +visits("Distribución de visitas: Días de la semana","visitsweek")
+    br
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash/wireless.js") 
+    script wireless();
+    script updatewireless(); 
+    script(src="/javascripts/dash/alerts.js")
+    script setupTables();

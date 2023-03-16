@@ -1,0 +1,294 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@import 'parts/_colors';
+
+@page {
+    size: letter;
+    margin: 0.5cm;
+    }
+h1 {
+    page-break-before: always;
+  }
+  
+h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+  }
+  
+  table, figure,.widget {
+    page-break-inside: avoid;
+  }
+  
+header ,.navbar, footer,#sidebar,.period-container,.breadcrumb,.printHide,.fa-arrow-left,.dataTables_length,.dataTables_filter,.dataTables_paginate {
+    display: none;
+    }
+    
+div[class|='rainbow']{
+        display: none;
+    }
+.widget{
+    width: 6 in;
+    height: 4.5in;
+}
+.piePrint{
+    width:20cm
+}
+
+#canvas{
+  page-break-after: always;
+}
+
+div {
+  page-break-inside: avoid;
+}
+
+h1 {
+    display: inline-block;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    //color: #fff;
+    display: inline-block;
+}
+h6 {
+    margin-left: 5%;
+}
+p {
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 5% 0;
+}
+ul li p {
+    font-size: 1.2rem;
+}
+
+#dash {
+  padding-top: 8px;
+  .widget {
+      padding: 6px 0 0 10px;
+      & > div {
+          width: 100%;
+          padding: 4px 10px;
+          border-radius: 8px;
+      }
+      .head {
+          padding: 5px 10px;
+          //border-bottom: solid 1px white;
+          .sem {
+              height: 25px;
+              width: 25px;
+              border-radius: 50%;
+              display: inline-block;
+              &.red {
+                  background-color: $RED;
+              }
+              &.green {
+                  background-color: $GREEN;
+              }
+              &.yellow {
+                  background-color: $YELLOW;
+              }
+          }
+          .filters {
+              width: 100%;
+              justify-items: initial;
+              display: inline-flex;
+              justify-content: space-between;
+              margin: 2px 0 0 0;
+
+              .close {
+                  width: 18px;
+                  margin: 4px -15px 3px 10px;
+                  float: right;
+              }
+          }
+
+          // input[type="button"] {
+          //     border: solid 1px $LBLUE;
+          //     background-color: transparent;
+          //     color: #ffffff;
+          //     width: 120px;
+          //     height: 26px;
+          //     border-radius: 13px;
+          // }
+      }
+      .body {
+          padding: 10px;
+      }
+  }
+  .bullet {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      margin: 0 10px;
+      &.darkblue {
+          background-color: $DBLUE;
+      }
+      &.lightIn {
+          background-color: $IN;
+      }
+      &.lightOut {
+          background-color: $OUT;
+      }
+      &.lightTotal {
+          background-color: $MAX;
+      }
+      &.yellow {
+          background-color: $YELLOW;
+      }
+      &.lightblue {
+          background-color: $LBLUE;
+      }
+      &.blue1 {
+          background-color: $BLUE1;
+      }
+
+      &.orange {
+          background-color: $ORANGE;
+      }
+
+      &.lila {
+          background-color: $LILA;
+      }
+      &.yellow {
+          background-color: $YELLOW1;
+      }
+
+      &.aqua {
+          background-color: $AQUA;
+      }
+
+      &.pink {
+          background-color: $PINK;
+      }
+
+      &.blue2 {
+          background-color: $BLUE2;
+      }
+  }
+  .rectangle {
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      border-radius: 3px;
+      margin: 0 10px;
+  
+  }
+}
+.breadcrumb {
+  margin: 15px 0 0px 0;
+}
+
+body {
+  padding: 0;
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  display: inline-block;
+  margin: 0px;
+  font-size: 36px;
+  margin-bottom: -10px;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: inline-block;
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 20px;
+}
+h5{
+  font-size: 18px;
+}
+h6 {
+  margin-left: 5%;
+  font-size: 14px;
+}
+p {
+  margin: 0;
+}
+
+ul li {
+  list-style-type: none;
+  margin: 5% 0;
+}
+
+i,
+span {
+  display: inline-block;
+}
+.green{
+  color: $GREEN;
+}
+.red{
+  color: $RED;
+}
+.yellow{
+  color: $YELLOW;
+}
+
+.modal-content {
+  background-color: #333436;
+}
+
+table.dataTable tbody tr {
+  background-color: transparent;
+}
+
+.dataTables_wrapper {
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info,
+  .dataTables_processing {
+      //color: white !important;
+      margin: 10px 0;
+  }
+
+  .dataTables_paginate {
+      //color: white !important;
+
+      .paginate_button {
+         // color: white !important;
+
+          &.current {
+              border: 1px solid $BACK1;
+              background-color: $BACK1;
+
+              &:hover {
+                  border: 1px solid #979797;
+                  background-color: transparent;
+              }
+          }
+      }
+  }
+}
+
+
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom: none;
+}
+
+

@@ -1,0 +1,24 @@
+mixin service_iis(id, name)
+    .widget.col-6.p-2
+        div
+            .head
+                .filters(style="border: 0;")
+                    a(href="/dash/servers/iis")
+                        .title IIS
+                    .text-end
+                        img.img-fluid(src="/images/alert.png" style="max-width: 30px; max-height:30px")
+            .body
+                table(style="width: 100%")
+                    tr 
+                        td
+                            .kpi-value.s0#resptimeiis
+                                small ms
+                            .label Response time
+                        td
+                            canvas(style="width:90%;height:63px" id="resp_time")
+                    tr(style="height: 27px;")
+                    tr
+                        td(rowspan=4)
+                            #cust_adt_iis_bullets
+                        td
+                            canvas(style="width:90%;height:100px" id="resp_code")

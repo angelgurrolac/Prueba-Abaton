@@ -1,0 +1,27 @@
+mixin protocolos()
+    div.col-md-12.widget#contacts
+        div
+            .head
+                h5 Protocolos
+            .body
+                canvas#chartHistogramProtocoll(style=style="width:100%; height: 170px; margin-top: 10px")
+                br
+                table(style="width:100%; font-size: 12px; text-align: center;")
+                    tr
+                        td(style="vertical-align: middle")
+                            .bullet.lightIn(style="margin: 0px 20px 0 10px;background-color:#283593")
+                            h6(style="margin:0") SSL
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#0277BD")
+                            h6(style="margin:0") HTTPS
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#00695C")
+                            h6(style="margin:0") DNS
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#F9A825")
+                            h6(style="margin:0") IMAP,SSL 
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#9C27B0")
+                            h6(style="margin:0") SSH
+                        //td(style="font-size: 24px; font-weight: 800;")
+    block scripts
+        script(src="/javascripts/dash/ids.js")
+        script chartHistogramProtocoll();
+        script updateChartHistogramIds();
+        

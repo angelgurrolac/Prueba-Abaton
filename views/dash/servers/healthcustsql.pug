@@ -1,0 +1,56 @@
+extends ../../layout
+include ../part/filters
+include ../part/servicesTable
+include ../part/sql_trans
+
+include ../part/test
+block head
+    style.
+        td {
+             padding: 0 0.5em !important
+        }
+        .sem {
+            width: 0.8em;
+            height: 0.8em ;
+            border-radius: 50%;
+        }
+        .sem.green {
+            background-color: #36BA6E;
+        }
+        .sem.yellow {
+            background-color: #FBBC05;
+        }
+        .sem.red {
+            background-color: #F6404F;
+        }
+        .bar {
+            height: 1em;
+            background-color: #2598c9;
+        }
+        table.dataTable.no-footer {
+            border-bottom: none;
+        }
+
+
+
+block content
+    .row#dash 
+        h1.title Servers - SQL Server
+        .row
+            +serviceTable("Services","services")
+            +serviceTable("Databases","db")
+            +serviceTable("Backup Jobs","jobs")
+        .row
+            +serviceTable("Cluster/Replication","cluster")  
+            +sql_trans("logs")   
+       
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash/lvl2/sql.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/libs/Custom.js")
+    script health();
+    script update();

@@ -1,0 +1,36 @@
+extends layout
+include vpn/licencias
+include vpn/radarvpn
+include vpn/bytes
+
+block content
+    //- .row#dash
+    //-     +filters(_estados)
+    .row
+        .col-12
+            a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+            h1 VPN 
+            nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                ol.breadcrumb
+                    li.breadcrumb-item.active(aria-current="page")
+                        a(href="/dash") Inicio
+                    li.breadcrumb-item Dashboard
+    .row#dash 
+        +licencias()
+        +radarvpn()
+        +bytes("Tráfico de VPN - Entrada", "vpnin"," 4.2 Mbps")
+        +bytes("Tráfico de VPN - Salida", "vpnout"," 1.8 Mbps")
+  
+  
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/libs/Custom.js") 
+    script(src="/javascripts/dash/vpn.js") 
+    script vpnbar();
+    script licencias();
+    script bytes();
+    script updatevpn2();

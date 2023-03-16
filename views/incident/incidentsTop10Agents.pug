@@ -1,0 +1,70 @@
+mixin incidentsTop10Agents()
+    .widget.col-md-6
+        //- FIX: Metí el contenido del widget en un div
+        div
+            div.head
+                .filters
+                    h5 Incidentes / Top 10 agentes
+                    img.close(src="/images/icon-btn-close.svg")
+                .filters
+                    input.filterDay(type="button" value="Hoy" onclick="filterDay()" style="background-color: #4fc6eb; color: #272C31")
+                    input.filterWeek(type="button" onclick="filterWeek()" value="Semana")
+                    input.filterYear(type="button" onclick="filterYear()" value="Año")
+            //- TODO: mandar datos desde el ruter
+            table(style="width:100%;text-align: center;")
+                tr
+                    th Nombre
+                    th Resueltos 1er contacto
+                    th Total asignados
+                    th Total mal asignados
+                tr  
+                    td Karina alba
+                    td.countInteger 95
+                    td.countInteger 184
+                    td.countInteger 26
+                tr
+                    td Camilo Luis
+                    td.countInteger 254
+                    td.countInteger 429
+                    td.countInteger 97
+                tr
+                    td Julia Jerez
+                    td.countInteger 120
+                    td.countInteger 267
+                    td.countInteger 54
+                tr
+                    td Juan Lopez
+                    td.countInteger 42
+                    td.countInteger 128
+                    td.countInteger 12
+                tr
+                    td Felipe Miro
+                    td.countInteger 210
+                    td.countInteger 453
+                    td.countInteger 86
+                tr
+                    td Eduardo Heras
+                    td.countInteger 136
+                    td.countInteger 259
+                    td.countInteger 24
+                tr
+                    td Oliver Guijarro
+                    td.countInteger 196
+                    td.countInteger 429
+                    td.countInteger 35
+                tr
+                    td Mónica Conde
+                    td.countInteger 125
+                    td.countInteger 365
+                    td.countInteger 15
+                tr
+                    td Xavier Ruz
+                    td.countInteger 306
+                    td.countInteger 521
+                    td.countInteger 89
+                tr
+                    td Joana Perez
+                    td.countInteger 16
+                    td.countInteger 146
+                    td.countInteger 19
+            br

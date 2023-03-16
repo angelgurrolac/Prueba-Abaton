@@ -1,0 +1,12 @@
+mixin period-select(id)
+    .period-container
+        select(id="period-"+id data-id=id)
+            -for (let o of periods)
+                option(value=o.code data-format=o.format selected=o.default)= o.label
+        .dates
+            .ok(style="display: none")
+                input.edit(type="button")
+            .edit
+                input.start(type="date")
+                input.end(type="date")
+                input.ok(type="button" value="OK")

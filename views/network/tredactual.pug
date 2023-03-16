@@ -1,0 +1,19 @@
+mixin tredactual(title, id)
+    .widget.p-2.col-4
+        div
+            .head
+                .title=title
+            .body 
+                table(style="width:100%; text-align:center;")
+                    tr  
+                        td.text-center
+                            canvas(style="width: 100% ;height:150px; " id="amount_tred_" + id)
+                //br 
+                //table(style="width:100%; font-size: 11px;text-align:center;")
+                    tr
+                        td(style="vertical-align: middle")
+                            .bullet.gray(style="margin: 0px 10px 0 10px;")
+                            h6(style="margin:0") Entrada 241 Mb&nbsp;
+                        td(style="vertical-align: middle")
+                            .bullet.red1(style="margin: 0px 10px 0 10px;")
+                            h6(style="margin:0") Salida 137 Mb&nbsp;     

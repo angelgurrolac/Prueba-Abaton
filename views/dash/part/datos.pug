@@ -1,0 +1,14 @@
+mixin datos(title)
+    .col-md-4.widget
+        div
+            .head
+                h5=title
+            .body 
+                table(style="width:100%;")
+                    tr  
+                        td.text-center
+                            canvas#chartdatos(style="width:50px;")
+
+
+    block scripts 
+        script(src="/javascripts/dash/lvl1/datos.js") 

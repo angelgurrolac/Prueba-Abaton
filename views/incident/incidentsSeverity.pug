@@ -1,0 +1,21 @@
+mixin incidentsSeverity()
+    div.col-md-4.widget
+        div
+            .head
+                h5 Incidentes por severidad
+            .body
+                canvas#chartincidentsSeverity(style="width:100%; height: 170px; margin-top: 10px")
+                br
+                table(style="width:100%; font-size: 12px; text-align: center;")
+                    tr
+                        td(style="vertical-align: middle")
+                            .bullet.lightIn(style="margin: 0px 20px 0 10px;background-color:#F9B941")
+                            h6(style="margin:0") Total
+                            .bullet.lightOut(style="margin: 0px 20px 0 10px;background-color:#FF4C97")
+                            h6(style="margin:0") Resueltos en tiempo
+                        td(style="font-size: 24px; font-weight: 800;")
+    block scripts
+        script(src="/javascripts/dash/main/incidentsSeverity.js")
+        script chartincidentsSeverity();
+        script updateChartincidentsSeverity();
+        

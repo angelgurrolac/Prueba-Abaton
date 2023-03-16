@@ -1,0 +1,19 @@
+mixin model()
+    .widget.col-lg-12.col-md-12.col-xs-12.col-xl-12
+        div
+            .head
+                h5 Modelo predictivo - Ancho de banda tarjetas de crédito y débito  
+            .body
+                .row.g-0
+                    .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+                        .text-center(style="width:1100px;height:300px;")
+                            canvas#model(style="margin-top: 20px" height="300" width="1100")
+                .row.g-0
+                    .col-lg-12.col-md-12.col-xs-12.mx-auto.my-auto.text-center
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#A2A29D")
+                        h5(style="margin:0") Intervalo&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#F76300")
+                        h5(style="margin:0") Pronostico&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                        h5(style="margin:0") Real&nbsp;
+                        

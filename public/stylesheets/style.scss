@@ -1,0 +1,314 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+@import 'parts/_colors';
+
+//INTERFAZ GRAFICA ANGEL
+#dash {
+    .widget {
+        & > div {
+            background-color: #ffffff;
+           
+            border: solid 2px #cccccc;
+        }
+    }
+}
+.navbar {
+    body {
+        font-family: "Poppins", sans-serif;
+        background: #323233;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.8em;
+        font-weight: 300;
+        line-height: 1.7em;
+        color: #999;
+    }
+
+    input {
+        background-color: #272830 !important;
+        border: 1px solid #212529 !important;
+        color: #fff !important;
+    }
+}
+
+h1 {
+    display: inline-block;
+}
+h4 {
+    font-size: 1.2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: #fff;
+    display: inline-block;
+}
+h6 {
+    margin-left: 5%;
+}
+p {
+    margin: 0;
+}
+hr {
+    color: #ffffff;
+}
+ul li {
+    list-style-type: none;
+    margin: 5% 0;
+}
+ul li p {
+    font-size: 1.2rem;
+}
+.navbar {
+    padding: 0 10px;
+    background: #272830;
+    border: none;
+    border-radius: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+i,
+span {
+    display: inline-block;
+}
+
+// SIDEBAR STYLE
+
+#wrapper {
+    display: flex;
+    // align-items: stretch;    // TODO: what
+    height: 100%;
+}
+
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #323233;
+}
+
+#sidebar ul li img {
+    width: 15%;
+    margin: 0 4% 0 0;
+}
+.hamburger {
+    width: 40px;
+}
+.search {
+    width: 40px;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #272830;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+a.menu {
+    display: inline-block;
+    padding: 10px;
+}
+
+.user-panel {
+    padding: 0 0 0 19px !important;
+    margin: 15px 0 !important;
+}
+
+.dashboard {
+    text-shadow: 4px 4px 5px #000;
+}
+.div {
+    font-size: larger;
+    background-color: #272c31;
+    border-radius: 10px;
+    padding: 10px;
+}
+.text-middle {
+    margin: 0 7%;
+}
+.text-first {
+    margin: 0 6% 0 0;
+}
+.text-last {
+    margin: 0 0 0 4%;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #004d96;
+    margin-top: -5px;
+    max-width: 95%;
+    box-shadow: 0px 4px 0px 0px #000;
+}
+.triangle-up-esx {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #004d96;
+    margin-top: -5px;
+    max-width: 95%;
+    box-shadow: 0px 4px 0px 0px #000;
+}
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-right: 20px solid #004d96;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    box-shadow: 3px 0px 0 0px #000000;
+}
+
+#admin {
+    .menu {
+        a {
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            background-color: #272830;
+            border: solid 1px #272830;
+            padding: 16px;
+            margin-left: 20px;
+            border-radius: 16px;
+            font-size: 2em;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+    }
+
+    #grid_length,
+    #grid_filter > label {
+        color: white;
+    }
+
+    .paginate_button:not(.disabled) {
+        color: white !important;
+    }
+
+    i.crud {
+        padding: 0 10px;
+        font-size: 20px;
+        color: white;
+    }
+}
+
+.nointerfaces {
+    margin: 0px 8px 0px 8px;
+}
+
+.tooltipRow {
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.colorTextgreen {
+    color: $GREEN;
+}
+.colorTextred {
+    color: $RED;
+}
+.colorTextyellow {
+    color: $YELLOW;
+}
+
+a[aria-expanded="true"] {
+    color: #fff;
+    background: $WHITE;
+}
+.hamburger {
+    width: 40px;
+    margin-right: 20px;
+}
+.search {
+    width: 40px;
+    // margin-right: 5px;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #121212;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+a.menu {
+    display: inline-block;
+    padding: 10px;
+}
+
+.user-panel {
+    padding: 0 0 0 19px !important;
+    margin: 30px 0 !important;
+}
+
+td.dt-control {
+background: url("https://www.datatables.net/examples/resources/details_open.png") no-repeat center center;
+cursor: pointer;
+}
+
+tr.dt-hasChild td.dt-control {
+background: url("https://www.datatables.net/examples/resources/details_close.png") no-repeat center center;
+  }
+@import "parts/_global";
+@import "parts/_sidebar";
+@import "parts/_widget";
+@import "parts/_rainbow";
+@import "parts/_range-slider";
+@import "parts/_custom";
+@import "parts/_filterbar";

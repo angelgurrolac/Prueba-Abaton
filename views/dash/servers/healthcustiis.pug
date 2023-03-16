@@ -1,0 +1,60 @@
+extends ../../layout
+include ../part/filters
+include ../part/overall
+include ../part/servicesTable
+include ../part/singleCanvas
+include ../part/responseTime
+include ../part/test
+include ../part/serviceTableHits
+include ../part/server
+
+block head
+    style.
+         td {
+             padding: 0 0.5em !important
+        }
+        .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        .sem.green {
+            background-color: #36BA6E;
+        }
+        .sem.yellow {
+            background-color: #FBBC05;
+        }
+        .sem.red {
+            background-color: #F6404F;
+        }
+        table.dataTable.no-footer {
+            border-bottom: none;
+        }
+        #tophits tbody tr td{
+            padding: 5px !important;
+        }
+
+block content
+    .row#dash
+        h1.title Servers - IIS
+        .row 
+            .col-3
+                +server("ADT")
+        .row
+            +responseTime("Response time","responsecodes")
+            +singleCanvas("Response codes","responsecodes","6")
+        .row
+            +serviceTableHits("Top hits","tophits")
+            +serviceTable("Application Pools","pools")
+
+       
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js")
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/dash/lvl2/adtiis.js")
+    script adtiis();
+    script updateadtiis();

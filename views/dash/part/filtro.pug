@@ -1,0 +1,43 @@
+mixin filtro()
+    .widget.col-md-12.col-sm-12.col-lg-6.col-xl-6.p-2
+        div 
+            //.head   
+                .filters    
+                    h4.m-0 Filtros 
+                    .text-end 
+                        a(href="")
+                            h5 Borrar filtros
+            .body.p-1
+                .row.period-container
+                    .col-4
+                        h6.m-0 Filtro por region:
+                        select.form-control.mt-2#locations
+                            option(value=1) Global
+                            option(value=1) GR Nacional 
+                            option(value=1) GC Interno 
+                            option(value=1) GCR Central 
+                            option(value=1) GCR Alterno 
+                            option(value=1) GCR Peninsula 
+                            option(value=1) SGC La Paz  
+                            option(value=1) GCR Norte 
+                            option(value=1) CORP 
+                            option(value=1) GCR Oriente 
+                            option(value=1) GCR Occidente
+                            option(value=1) GCR Noreste
+                            option(value=1) GCR Baja California 
+                    .col-4
+                        h6.m-0 Filtro por elementos:
+                        select.form-control.mt-2#elementos
+                            option(value=1) Global 
+                            option(value=1) Servidores 
+                            option(value=1) Maquinas virtuales 
+                            option(value=1) ESXi 
+                    .col-4
+                        h6.m-0 Filtro por fecha:
+                        select.form-control.mt-2#locations
+                            option(value=1) Hoy (Día actual)
+                            option(value=1) Semana 
+                            option(value=1) Mes Actual
+                            option(value=1) Mes anterior
+                            option(value=1) Ultimos 3 meses
+                            option(value=1) Año

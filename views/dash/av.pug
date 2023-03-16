@@ -1,0 +1,67 @@
+extends ../layout
+
+//- include av/system_health
+//- include av/data_processing
+//- include av/components_state
+include av/alerts_import
+include av/alerts_vector
+include av/top_ip
+include av/alerts_tech
+include av/alerts_status
+include av/top_domains
+
+block head
+    style.
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 1px
+        }
+        table.dataTable th {
+           display: none;
+        }
+        .alsem {
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+        }
+        .alsem.high
+        {
+            background-color: #ee3528;
+        }
+        .alsem.med
+        {
+            background-color: #ffc221;
+        }
+        .alsem.low
+        {
+            background-color: #008745;
+        }
+
+block content
+    #dash
+        .row
+            .col-12
+                a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 Antivirus
+                nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item.active(aria-current="page")
+                            a(href="/dash") Inicio
+                        li.breadcrumb-item Dashboard
+        br
+        .row
+            //- +system_health()
+            //- +data_processing()
+            //- +components_state()
+            +alerts_import()
+            +alerts_vector()
+            +alerts_status()
+            +top_ip()
+            +alerts_tech()
+            +top_domains()
+
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/dash/av.js")
+    script loopDash();

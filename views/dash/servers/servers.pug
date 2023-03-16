@@ -1,0 +1,122 @@
+extends ../../layout
+include ../part/filters
+include ../part/overall
+include ../part/apps
+include ../part/service_iis
+include ../part/service_sql
+include ../part/service_win
+include ../part/service_vmware
+include ../part/server
+
+
+block head
+    style.
+        #servers_ADT {
+            font-size: 1.5em;
+        }
+        #servers_ADT .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        #servers_ADT .sem.green {
+            background-color: #36BA6E;
+        }
+        #servers_ADT .sem.yellow {
+            background-color: #FBBC05;
+        }
+        #servers_ADT .sem.red {
+            background-color: #F6404F;
+        }
+        #servers_ADT table.dataTable.no-footer {
+            border-bottom: none;
+        }
+        #servers_SEFCU {
+            font-size: 1.5em;
+        }
+        #servers_SEFCU .sem {
+            width: 1em;
+            height: 1em ;
+            border-radius: 50%;
+        }
+        #servers_SEFCU .sem.green {
+            background-color: #36BA6E;
+        }
+        #servers_SEFCU .sem.yellow {
+            background-color: #FBBC05;
+        }
+        #servers_SEFCU .sem.red {
+            background-color: #F6404F;
+        }
+        #servers_SEFCU table.dataTable.no-footer {
+            border-bottom: none;
+        }
+        #servers_SEFCU table tbody tr td {
+            padding: 0;
+        }
+        td {
+             padding: 0 0.5em !important
+        }
+        .sem {
+            width: 0.8em;
+            height: 0.8em ;
+            border-radius: 50%;
+        }
+        .sem.green {
+            background-color: #36BA6E;
+        }
+        .sem.yellow {
+            background-color: #FBBC05;
+        }
+        .sem.red {
+            background-color: #F6404F;
+        }
+        .bar {
+            height: 1em;
+            background-color: #2598c9;
+        }
+        table.dataTable.no-footer {
+            border-bottom: none;
+        }
+
+
+
+block content
+ #dash.p-0
+        .row
+            .col-12
+                a(href="/dash") 
+                    i.fa.fa-arrow-left(aria-hidden="true" style="font-size: 26px;margin: 0 15px 2px 0;")
+                h1 Servidores
+                nav.float-end.d-flex(style="--bs-breadcrumb-divider: \'>\';" aria-label="breadcrumb")
+                    ol.breadcrumb
+                        li.breadcrumb-item.active(aria-current="page")
+                            a(href="/dash") Inicio
+                        li.breadcrumb-item Dashboard
+        .row
+            +overall("Salud General","health","Promedio salud")
+            .col-3
+                +server("ADT")
+            .col-5
+                +apps()
+
+        .row
+            +service_win("win","servers")
+            +service_iis("iis","servers")
+        .row
+            +service_sql("sql","servers")
+            +service_vmware("vmware","servers")
+
+block scripts
+    //- libs 
+    script(src="/javascripts/fmt.js")
+    script(src="/javascripts/libs/ChartLib.js") 
+    script(src="/javascripts/libs/Gauge.js") 
+    script(src="/javascripts/libs/KpiLib.js") 
+    script(src="/javascripts/libs/Custom.js")
+    script(src="/javascripts/fakedata.js")
+    script(src="/javascripts/dash/healthlvl1.js")
+    script makeDash();
+    script(src="/javascripts/dash/lvl1/services.js")
+    script update();
+    script updateChartHistogramContacts();

@@ -1,0 +1,25 @@
+#dash {
+    #service{
+        .valor{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .benchmark {
+            width: 100%;
+            font-family: Tahoma;
+            font-size: 14px;
+            margin: 10px 0 0px 0px;
+
+            .bar {
+                height: 4px;
+                border-radius: 3px;
+                background: #006bf7;
+                background: -moz-linear-gradient(left, #006bf7 0%, #ddf1f9 65%, #feffff 100%);
+                background: -webkit-linear-gradient(left, #006bf7 0%, #ddf1f9 65%, #feffff 100%);
+                background: linear-gradient(to right, #006bf7 0%, #ddf1f9 65%, #feffff 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006bf7', endColorstr='#feffff',GradientType=1 );
+            }
+        }
+    }
+}

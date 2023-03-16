@@ -1,0 +1,83 @@
+include ../demo/period-select
+
+mixin model()
+    .widget.col-xl-12.col-xxl-12.col-lg-12.col-md-12.col-sm-12.tools.p-1
+        div
+            .head
+                .filters
+                    h5.title Modelo predictivo - Jitter
+                    .text_end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("model-jitter")
+            .body
+                .row
+                    .col-xxl-11.col-xl-11.col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        canvas#model-jitter(style="margin-top: 20px;height:250px;width:1000px;")
+                .row 
+                    .col-xxl-3.col-xl-3.col-lg-3.col-md-3.col-xs-3.mx-auto.my-auto.text-center
+                    .col-xxl-7.col-xl-7.col-lg-7.col-md-7.col-xs-7.mx-auto.my-auto.text-center
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#8C8C8C")
+                        h5(style="margin:0") Intervalo&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#FBBC05")
+                        h5(style="margin:0") Pronostico&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                        h5(style="margin:0") Real&nbsp;
+                    .col-xxl-2.col-xl-2.col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-xl-12.col-xxl-12.col-lg-12.col-md-12.col-sm-12.tools.p-1
+        div
+            .head
+                .filters
+                    h5.title Modelo predictivo - Latencia
+                    .text_end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("model-latency")
+            .body
+                .row
+                    .col-xxl-11.col-xl-11.col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        canvas#model-latency(style="margin-top: 20px;height:250px;width:1000px;")
+                .row 
+                    .col-xxl-3.col-xl-3.col-lg-3.col-md-3.col-xs-3.mx-auto.my-auto.text-center
+                    .col-xxl-7.col-xl-7.col-lg-7.col-md-7.col-xs-7.mx-auto.my-auto.text-center
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#8C8C8C")
+                        h5(style="margin:0") Intervalo&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#FBBC05")
+                        h5(style="margin:0") Pronostico&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                        h5(style="margin:0") Real&nbsp;
+                    .col-xxl-2.col-xl-2.col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    .widget.col-xl-12.col-xxl-12.col-lg-12.col-md-12.col-sm-12.tools.p-1
+        div
+            .head
+                .filters
+                    h5.title Modelo predictivo - Loss
+                    .text_end
+                        //- .sem.green
+                        img.close(src="/images/icon-btn-close.svg")
+                .filters 
+                    +period-select("model-loss")
+            .body
+                .row
+                    .col-xxl-11.col-xl-11.col-lg-11.col-md-11.col-xs-11.mx-auto.my-auto.text-center
+                        canvas#model-loss(style="margin-top: 20px;height:250px;width:1000px;")
+                .row 
+                    .col-xxl-3.col-xl-3.col-lg-3.col-md-3.col-xs-3.mx-auto.my-auto.text-center
+                    .col-xxl-7.col-xl-7.col-lg-7.col-md-7.col-xs-7.mx-auto.my-auto.text-center
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#8C8C8C")
+                        h5(style="margin:0") Intervalo&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#FBBC05")
+                        h5(style="margin:0") Pronostico&nbsp;
+                        .rectangle(style="margin: 0px 20px 0 10px;background-color:#27D507")
+                        h5(style="margin:0") Real&nbsp;
+                    .col-xxl-2.col-xl-2.col-lg-2.col-md-2.col-xs-2.mx-auto.my-auto.text-center
+                .row 
+                    p.updatetext.text-end(style="font-size:10px")
+    
+    

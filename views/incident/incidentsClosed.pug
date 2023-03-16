@@ -1,0 +1,4 @@
+include metricPercent
+
+mixin incidentsClosed()
+    +metricPercent("Áreas resolutoras", data.incidents.closed, "closed")

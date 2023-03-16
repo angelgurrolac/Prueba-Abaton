@@ -1,0 +1,34 @@
+.period-container div {
+    display: inline-block;
+}
+.period-container div.dates,
+.period-container div.dates2 {
+    display: none;
+}
+.period-container select {
+    border-radius: 0.5em;
+}
+.period-container select,
+.period-container input[type="date"],
+.period-container input[type="time"],
+.period-container input[type="button"] {
+    background-color: #333333;
+    color: white !important;
+    font-size: 0.8em;
+    // height: 2em;
+    vertical-align: middle;
+}
+.period-container input[type="button"].ok {
+    border: solid 1px white;
+    background: cornflowerblue;
+    border-radius: 0.5em;
+}
+.period-container input[type="button"].edit {
+    border: none;
+    background: none;
+    text-decoration: underline;
+}
+
+.filter select {
+    font-size: 0.8em;
+}
